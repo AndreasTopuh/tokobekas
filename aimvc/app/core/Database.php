@@ -8,7 +8,7 @@ class Database {
     private $host = 'localhost';
     private $db_name = 'db_tokobekas';
     private $username = 'root';
-    private $password = 'rootjeno';
+    private $password = ':hebGxdL~uui~24';
     public $conn;
 
     public function getConnection() {
