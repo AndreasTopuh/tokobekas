@@ -46,8 +46,8 @@ $barangList = $barangController->showAllBarang();
                                     </a><br>
                                     Deskripsi: <?= htmlspecialchars($barang['deskripsi']); ?>
                                 </p>
-                                <a href="#" class="card-link">Lihat Detail</a>
-                                <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>?text=Halo,%20saya%20tertarik%20dengan%20barang%20yang%20Anda%20jual." class="card-link" target="_blank">Hubungi Penjual</a>
+                               <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>?text=Halo,%20saya%20tertarik%20dengan%20barang%20Anda:%20<?= urlencode($barang['nama']); ?>" class="card-link" target="_blank">Hubungi Penjual</a>
+
 
                             </div>
                         </div>
