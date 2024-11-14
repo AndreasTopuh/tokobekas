@@ -40,11 +40,14 @@ $barangList = $barangController->showAllBarang();
                                 <p class="card-text">
                                     Harga: Rp <?= htmlspecialchars($barang['harga']); ?><br>
                                     Status: <?= htmlspecialchars($barang['status']); ?><br>
-                                    Nomor Penjual: <?= htmlspecialchars($barang['nomor_penjual']); ?><br>
+                                    Nomor Penjual: 
+                                    <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>" class="card-link" target="_blank">
+                                        <?= htmlspecialchars($barang['nomor_penjual']); ?>
+                                    </a><br>
                                     Deskripsi: <?= htmlspecialchars($barang['deskripsi']); ?>
                                 </p>
                                 <a href="#" class="card-link">Lihat Detail</a>
-                                <a href="#" class="card-link">Hubungi Penjual</a>
+                            <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>?text=<?= urlencode('Saya ingin membeli barang Anda'); ?>" class="card-link" target="_blank">Pesan Penjual</a>
                             </div>
                         </div>
                     </div>

@@ -83,10 +83,13 @@ if (!isset($_SESSION['user'])) {
             </div>
             <div class="mb-3">
                 <label for="nomor_penjual" class="form-label small-label">Nomor Penjual</label>
+                <p><em><strong>Contoh: 08*********</strong></em></p>
+                
                 <input type="text" name="nomor_penjual" id="nomor_penjual" class="form-control form-control-sm" placeholder="Nomor Penjual" required>
             </div>
             <div class="mb-3">
                 <label for="deskripsi" class="form-label small-label">Deskripsi</label>
+                <p><em>Tulis kekurangan/mines barang anda</em></p>
                 <textarea name="deskripsi" id="deskripsi" class="form-control form-control-sm" placeholder="Deskripsi"></textarea>
             </div>
             <button type="submit" name="add_barang" class="btn btn-bd-primary">Tambah Barang</button>
