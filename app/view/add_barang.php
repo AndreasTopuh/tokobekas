@@ -58,10 +58,10 @@ if (!isset($_SESSION['user'])) {
                 <label for="nama" class="form-label small-label">Nama Barang</label>
                 <input type="text" name="nama" id="nama" class="form-control form-control-sm" placeholder="Nama Barang" required>
             </div>
-            <!-- <div class="mb-3">
+            <div class="mb-3">
                 <label for="gambar" class="form-label small-label">Upload Gambar</label>
                 <input type="file" name="gambar" id="gambar" class="form-control form-control-sm" accept="image/*" required>
-            </div> -->
+            </div>
             <div class="mb-3">
                 <label for="harga" class="form-label small-label">Harga</label>
                 <input type="number" name="harga" id="harga" class="form-control form-control-sm" placeholder="Harga" step="0.01" required>
