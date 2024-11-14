@@ -32,7 +32,7 @@ public function getBarangByUser($userId) {
 
 
 public function addBarang($data, $userId) {
-    $query = "INSERT INTO " . $this->table_name . " (nama, harga, kondisi, jenis, status, nomor_penjual, deskripsi, gambar, id_user) 
+    $query = "INSERT INTO " . $this->table_name . " (nama, harga, kondisi, jenis, status, nomor_penjual, deskripsi, id_user) 
               VALUES (:nama, :harga, :kondisi, :jenis, :status, :nomor_penjual, :deskripsi,:id_user)";
     $stmt = $this->conn->prepare($query);
     
