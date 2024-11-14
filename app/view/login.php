@@ -32,7 +32,7 @@
 <body>
     <div class="login-container mt-5">
         <div class="logo">
-            <h1>Logo</h1> <!-- Ganti dengan logo Anda -->
+            <h1>MASA LEH</h1> <!-- Ganti dengan logo Anda -->
         </div>
         <h2 class="text-center">Login</h2>
         <form method="POST" action="/unkpresent/tokobekas/index.php">
