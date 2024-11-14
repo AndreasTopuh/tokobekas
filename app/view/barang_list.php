@@ -34,11 +34,6 @@ $barangList = $barangController->showAllBarang();
                 <?php foreach ($barangList as $barang): ?>
                     <div class="col-md-4 mb-4">
                         <div class="card" style="width: 18rem;">
-                            <?php if (!empty($barang['gambar'])): ?>
-                                <img src="/unkpresent/tokobekas/public/img/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top" alt="<?= htmlspecialchars($barang['nama']); ?>">
-                            <?php else: ?>
-                                <img src="/unkpresent/tokobekas/public/img/default.jpg" class="card-img-top" alt="Gambar tidak tersedia">
-                            <?php endif; ?>
                             <div class="card-body">
                                 <h5 class="card-title"><?= htmlspecialchars($barang['nama']); ?></h5>
                                 <h6 class="card-subtitle mb-2 text-body-secondary"><?= htmlspecialchars($barang['jenis']); ?> - <?= htmlspecialchars($barang['kondisi']); ?></h6>

@@ -33,7 +33,7 @@ public function getBarangByUser($userId) {
 
 public function addBarang($data, $userId) {
     $query = "INSERT INTO " . $this->table_name . " (nama, harga, kondisi, jenis, status, nomor_penjual, deskripsi, gambar, id_user) 
-              VALUES (:nama, :harga, :kondisi, :jenis, :status, :nomor_penjual, :deskripsi, :gambar, :id_user)";
+              VALUES (:nama, :harga, :kondisi, :jenis, :status, :nomor_penjual, :deskripsi,:id_user)";
     $stmt = $this->conn->prepare($query);
     
     $stmt->bindParam(':nama', $data['nama']);
@@ -43,7 +43,6 @@ public function addBarang($data, $userId) {
     $stmt->bindParam(':status', $data['status']);
     $stmt->bindParam(':nomor_penjual', $data['nomor_penjual']);
     $stmt->bindParam(':deskripsi', $data['deskripsi']);
-    $stmt->bindParam(':gambar', $data['gambar']);
     $stmt->bindParam(':id_user', $userId);
 
     return $stmt->execute();

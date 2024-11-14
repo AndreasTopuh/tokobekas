@@ -38,23 +38,7 @@ class BarangController {
                 'deskripsi' => $_POST['deskripsi']
             ];
 
-            // Proses upload gambar
-            if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] === UPLOAD_ERR_OK) {
-                $targetDir = '/var/www/html/unkpresent/tokobekas/public/img/';
-                $fileName = basename($_FILES['gambar']['name']);
-                $targetFilePath = $targetDir . $fileName;
 
-                // Move the uploaded file
-                if (move_uploaded_file($_FILES['gambar']['tmp_name'], $targetFilePath)) {
-                    $data['gambar'] = $fileName;
-                } else {
-                    echo "Gagal mengunggah gambar.";
-                    exit();
-                }
-            } else {
-                // Default image in case no image is uploaded
-                $data['gambar'] = 'default.jpg';
-            }
 
             if (isset($_SESSION['user']['id'])) {
                 $userId = $_SESSION['user']['id'];
