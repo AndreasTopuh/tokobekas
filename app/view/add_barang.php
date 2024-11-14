@@ -83,7 +83,7 @@ if (!isset($_SESSION['user'])) {
             </div>
             <div class="mb-3">
                 <label for="nomor_penjual" class="form-label small-label">Nomor Penjual</label>
-                <p><em><strong>Contoh: 08*********</strong></em></p>
+                <p><em><strong>Contoh: 628*********</strong></em></p>
                 
                 <input type="text" name="nomor_penjual" id="nomor_penjual" class="form-control form-control-sm" placeholder="Nomor Penjual" required>
             </div>
