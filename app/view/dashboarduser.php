@@ -2,7 +2,7 @@
 session_start();
 
 if (!isset($_SESSION['user'])) {
-    header("Location: /unkpresent/tokobekas/index.php");
+    header("Location: /tokobekas/index.php");
     exit();
 }
 
@@ -16,7 +16,7 @@ $user = $_SESSION['user'];
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/unkpresent/tokobekas/public/css/style.css">
+    <link rel="stylesheet" href="/tokobekas/public/css/style.css">
     <style>
         body {
             background-color: #f8f9fa;

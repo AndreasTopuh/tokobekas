@@ -3,7 +3,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 session_start();
 
 if (!isset($_SESSION['user'])) {
-    header("Location: /unkpresent/tokobekas/index.php");
+    header("Location: /tokobekas/index.php");
     exit;
 }
 
@@ -22,7 +22,7 @@ $barangList = $barangController->showAllBarang();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daftar Barang Bekas</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/unkpresent/tokobekas/public/css/style.css">
+    <link rel="stylesheet" href="/tokobekas/public/css/style.css">
 </head>
 <body>
     <div class="container mt-5">

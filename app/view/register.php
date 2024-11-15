@@ -35,7 +35,7 @@
             <h1>Logo</h1> <!-- Ganti dengan logo Anda -->
         </div>
         <h2 class="text-center">Daftar</h2>
-<form method="POST" action="/unkpresent/tokobekas/"> <!-- Ganti dengan URL yang benar -->
+<form method="POST" action="/tokobekas/"> <!-- Ganti dengan URL yang benar -->
             <div class="mb-3">
                 <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
             </div>

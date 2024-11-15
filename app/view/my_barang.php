@@ -3,7 +3,7 @@ error_reporting(E_ALL & ~E_NOTICE); // Menyembunyikan pesan notice
 session_start(); // Pastikan ini dipanggil hanya sekali
 
 if (!isset($_SESSION['user'])) {
-    header("Location: /unkpresent/tokobekas/index.php");
+    header("Location: /tokobekas/index.php");
     exit();
 }
 

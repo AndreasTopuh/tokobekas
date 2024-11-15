@@ -35,7 +35,7 @@
             <h1>MASA LEH</h1> <!-- Ganti dengan logo Anda -->
         </div>
         <h2 class="text-center">Login</h2>
-        <form method="POST" action="/unkpresent/tokobekas/index.php">
+        <form method="POST" action="/tokobekas/index.php">
             <div class="mb-3">
                 <input type="email" name="email" class="form-control" placeholder="Email" required>
             </div>

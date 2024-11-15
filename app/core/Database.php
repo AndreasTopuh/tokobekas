@@ -5,7 +5,7 @@ use PDO;
 use PDOException;
 
 // define base URL path
-define("APP_PATH", "http://103.179.56.170/unkpresent/tokobekas/");
+define("APP_PATH", "http://103.179.56.170/tokobekas/");
 
 
 class Database {

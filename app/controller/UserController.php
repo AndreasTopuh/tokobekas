@@ -17,12 +17,12 @@ class UserController {
 
         if ($user) {
             $_SESSION['user'] = $user;
-            header("Location: /unkpresent/tokobekas/app/view/dashboarduser.php");
+            header("Location: /tokobekas/app/view/dashboarduser.php");
             exit();
         } else {
             $_SESSION['error'] = $this->userModel->emailExists($email) ? 
                 "Invalid/unmatched role, email or password." : "Email not registered!";
-            header("Location: /unkpresent/tokobekas/index.php");
+            header("Location: /tokobekas/index.php");
             exit();
         }
     }
@@ -30,7 +30,7 @@ class UserController {
     public function logout() {
         session_unset();
         session_destroy();
-        header("Location: /unkpresent/tokobekas/index.php");
+        header("Location: /tokobekas/index.php");
         exit();
     }
 
@@ -44,7 +44,7 @@ public function register($nama, $email, $password) {
     if ($this->userModel->emailExists($email)) {
         $_SESSION['error'] = "Email already registered!";
         // Redirect back to register page
-        header("Location: /unkpresent/tokobekas/app/view/register.php");
+        header("Location: /tokobekas/app/view/register.php");
         exit();
     }
 
@@ -52,11 +52,11 @@ public function register($nama, $email, $password) {
     if ($this->userModel->register($nama, $email, $password)) {
         // Set success message in session
         $_SESSION['success'] = "Registration successful! Please log in.";
-        header("Location: /unkpresent/tokobekas/");
+        header("Location: /tokobekas/");
         exit();
     } else {
         $_SESSION['error'] = "Failed to register!";
-        header("Location: /unkpresent/tokobekas/app/view/register.php");
+        header("Location: /tokobekas/app/view/register.php");
         exit();
     }
 }

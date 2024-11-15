@@ -9,7 +9,7 @@ use Controller\UserController;
 
 // Cek apakah pengguna sudah login
 if (isset($_SESSION['user'])) {
-    header("Location: /unkpresent/tokobekas/app/view/dashboarduser.php");
+    header("Location: /tokobekas/app/view/dashboarduser.php");
     exit();
 }
 
