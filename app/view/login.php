@@ -55,7 +55,8 @@
             <?php unset($_SESSION['success']); ?>
         <?php endif; ?>
 
-        <p class="text-center mt-3">Jika Anda belum terdaftar, silakan <a href="./app/view/register.php">daftar di sini</a>.</p>
+        <p class="text-center mt-3">Jika Anda belum terdaftar, silakan <a href="/tokobekas/app/view/register.php">daftar di sini</a>.</p>
+
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
