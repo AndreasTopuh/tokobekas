@@ -58,7 +58,7 @@
             <?php unset($_SESSION['success']); ?>
         <?php endif; ?>
 
-        <p class="text-center mt-3">Sudah punya akun? <a href="./login.php">Login di sini</a>.</p>
+        <p class="text-center mt-3">Sudah punya akun? <a href="./app/view/login.php">Login di sini</a>.</p>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
