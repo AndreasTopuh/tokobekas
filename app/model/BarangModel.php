@@ -34,29 +34,18 @@ public function getBarangByUser($userId) {
 
 
 public function addBarang($data, $userId) {
-    // Periksa apakah file gambar ada
     if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] == 0) {
-        $gambar = $_FILES['gambar']['name'];
-        $tmp = $_FILES['gambar']['tmp_name'];
-
-        // Tentukan folder tujuan untuk menyimpan gambar
-        $folderPath = $_SERVER['DOCUMENT_ROOT'] . "/tokobekas/public/images/fotobarang/";
-
-        // Pastikan folder tujuan ada
-        if (!is_dir($folderPath)) {
-            mkdir($folderPath, 0777, true);  // Membuat folder jika belum ada
-        }
-
-        // Tentukan path gambar yang disimpan di folder 'public/images/fotobarang/'
-        $gambarPath = "images/fotobarang/" . $gambar;  // Path relatif yang akan disimpan di database
-
-        // Pindahkan file gambar ke folder tujuan
-        if (!move_uploaded_file($tmp, $folderPath . $gambar)) {
+        $target_dir = "/var/www/html/tokobekas/public/images/fotobarang/";
+        $target_file = $target_dir . basename($_FILES["gambar"]["name"]);
+        if (move_uploaded_file($_FILES["gambar"]["tmp_name"], $target_file)) {
+            echo "The file ". basename($_FILES["gambar"]["name"]). " has been uploaded.";
+        } else {
             throw new Exception("Gagal mengupload gambar.");
         }
     } else {
         throw new Exception("File gambar tidak ada atau terjadi kesalahan saat upload.");
     }
+
 
     // Query untuk menambahkan data barang beserta path gambar
     $query = "INSERT INTO " . $this->table_name . " 
