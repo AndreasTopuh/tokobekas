@@ -34,7 +34,7 @@ $user = $_SESSION['user'];
 <body>
     <nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark" aria-label="Furni navigation bar">
         <div class="container">
-            <a class="navbar-brand" href="dashboarduser.php">Tokobekas<span>.</span></a>
+            <a class="navbar-brand" href="./dashboarduser.php">Tokobekas<span>.</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
                 aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -43,18 +43,18 @@ $user = $_SESSION['user'];
             <div class="collapse navbar-collapse" id="navbarsFurni">
                 <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
                     <li>
-                        <a class="nav-link" href="dashboarduser.php">Home</a>
+                        <a class="nav-link" href="./dashboarduser.php">Home</a>
                     </li>
-                    <li class="nav-item active"><a class="nav-link" href="barang_list.php">Daftar Barang Bekas</a></li>
+                    <li class="nav-item active"><a class="nav-link" href="./barang_list.php">Daftar Barang Bekas</a></li>
                     <li><a class="nav-link" href="add_barang.php">Jual Barang Anda</a></li>
                     <li class="nav-item">
-                        <a class="nav-link" href="my_barang.php">Barang Yang Anda Jual</a>
+                        <a class="nav-link" href="./my_barang.php">Barang Yang Anda Jual</a>
                     </li>
                 </ul>
 
                 <ul class="custom-navbar-cta navbar-nav mb-2 mb-md-0 ms-5">
-                    <li><a class="nav-link" href="my_barang.php"><img src="/tokobekas/public/images/user.svg" class="img-fluid"></a></li>
-                    <li><a class="nav-link" href="logout.php"><img src="/tokobekas/public/images/logout.png" class="img-fluid"></a></li>
+                    <li><a class="nav-link" href="./my_barang.php"><img src="/tokobekas/public/images/user.svg" class="img-fluid"></a></li>
+                    <li><a class="nav-link" href="./logout.php"><img src="/tokobekas/public/images/logout.png" class="img-fluid"></a></li>
                 </ul>
             </div>
         </div>

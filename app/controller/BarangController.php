@@ -65,8 +65,6 @@ class BarangController {
             return $barangModel->deleteBarang($id);
         }
 
-        
-
 
 }
 

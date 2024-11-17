@@ -32,28 +32,103 @@ public function getBarangByUser($userId) {
 }
 
 
-    public function addBarang($nama, $harga, $kondisi, $jenis, $gambar, $deskripsi, $nomor_penjual) {
-        // Tentukan direktori untuk menyimpan gambar
-        $targetDir = "/var/www/html/tokobekas/public/images/fotobarang/";
-        $targetFile = $targetDir . basename($gambar['name']);
-        $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+// public function addBarang($data, $userId) {
+//     // Periksa apakah file gambar ada
+//     if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] == 0) {
+//         $gambar = $_FILES['gambar']['name'];
+//         $tmp = $_FILES['gambar']['tmp_name'];
         
+//         // Tentukan folder tujuan untuk menyimpan gambar
+//         $folderPath = __DIR__ . "/../../public/images/fotobarang/";
 
-        // Validasi file gambar (ekstensi file)
-        if (in_array($imageFileType, ['jpg', 'jpeg', 'png'])) {
-            if (move_uploaded_file($gambar['tmp_name'], $targetFile)) {
-                // Gambar berhasil dipindahkan
-                $query = "INSERT INTO barang (nama, harga, kondisi, jenis, gambar, deskripsi, nomor_penjual) VALUES (?, ?, ?, ?, ?, ?, ?)";
-                $stmt = $this->db->prepare($query);
-                $stmt->bind_param("sssssss", $nama, $harga, $kondisi, $jenis, $targetFile, $deskripsi, $nomor_penjual);
-                $stmt->execute();
-                return true;
-            } else {
-                return false;
-            }
+//         // Pastikan folder tujuan ada
+//         if (!is_dir($folderPath)) {
+//             mkdir($folderPath, 0777, true);  // Membuat folder jika belum ada
+//         }
+
+//         // Tentukan path gambar yang disimpan
+//         $gambarPath = $folderPath . $gambar;
+
+//         // Pindahkan file gambar ke folder tujuan
+//         if (!move_uploaded_file($tmp, $gambarPath)) {
+//             throw new Exception("Gagal mengupload gambar.");
+//         }
+//     } else {
+//         throw new Exception("File gambar tidak ada atau terjadi kesalahan saat upload.");
+//     }
+
+//     // Query untuk menambahkan data barang beserta path gambar
+//     $query = "INSERT INTO " . $this->table_name . " 
+//               (nama, harga, kondisi, jenis, status, nomor_penjual, deskripsi, id_user, gambar) 
+//               VALUES (:nama, :harga, :kondisi, :jenis, :status, :nomor_penjual, :deskripsi, :id_user, :gambar)";
+    
+//     // Siapkan statement
+//     $stmt = $this->conn->prepare($query);
+
+//     // Binding parameter
+//     $stmt->bindParam(':nama', $data['nama']);
+//     $stmt->bindParam(':harga', $data['harga']);
+//     $stmt->bindParam(':kondisi', $data['kondisi']);
+//     $stmt->bindParam(':jenis', $data['jenis']);
+//     $stmt->bindParam(':status', $data['status']);
+//     $stmt->bindParam(':nomor_penjual', $data['nomor_penjual']);
+//     $stmt->bindParam(':deskripsi', $data['deskripsi']);
+//     $stmt->bindParam(':id_user', $userId);
+//     $stmt->bindParam(':gambar', $gambarPath);  // Menyimpan path gambar yang sudah dipindahkan ke folder
+
+//     // Eksekusi query dan kembalikan hasilnya
+//     return $stmt->execute();
+// }
+
+
+
+public function addBarang($data, $userId) {
+    // Periksa apakah file gambar ada
+    if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] == 0) {
+        $gambar = $_FILES['gambar']['name'];
+        $tmp = $_FILES['gambar']['tmp_name'];
+
+        // Tentukan folder tujuan untuk menyimpan gambar
+        $folderPath = __DIR__ . "/../../public/images/fotobarang/";
+
+        // Pastikan folder tujuan ada
+        if (!is_dir($folderPath)) {
+            mkdir($folderPath, 0777, true);  // Membuat folder jika belum ada
         }
-        return false;
+
+        // Tentukan path gambar yang disimpan di folder 'public/images/fotobarang/'
+        $gambarPath = "images/fotobarang/" . $gambar;  // Path relatif yang akan disimpan di database
+
+        // Pindahkan file gambar ke folder tujuan
+        if (!move_uploaded_file($tmp, $folderPath . $gambar)) {
+            throw new Exception("Gagal mengupload gambar.");
+        }
+    } else {
+        throw new Exception("File gambar tidak ada atau terjadi kesalahan saat upload.");
     }
+
+    // Query untuk menambahkan data barang beserta path gambar
+    $query = "INSERT INTO " . $this->table_name . " 
+              (nama, harga, kondisi, jenis, status, nomor_penjual, deskripsi, id_user, gambar) 
+              VALUES (:nama, :harga, :kondisi, :jenis, :status, :nomor_penjual, :deskripsi, :id_user, :gambar)";
+    
+    // Siapkan statement
+    $stmt = $this->conn->prepare($query);
+
+    // Binding parameter
+    $stmt->bindParam(':nama', $data['nama']);
+    $stmt->bindParam(':harga', $data['harga']);
+    $stmt->bindParam(':kondisi', $data['kondisi']);
+    $stmt->bindParam(':jenis', $data['jenis']);
+    $stmt->bindParam(':status', $data['status']);
+    $stmt->bindParam(':nomor_penjual', $data['nomor_penjual']);
+    $stmt->bindParam(':deskripsi', $data['deskripsi']);
+    $stmt->bindParam(':id_user', $userId);
+    $stmt->bindParam(':gambar', $gambarPath);  // Menyimpan path relatif ke gambar
+
+    // Eksekusi query dan kembalikan hasilnya
+    return $stmt->execute();
+}
 
 
 
