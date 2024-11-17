@@ -120,33 +120,48 @@ $user = $_SESSION['user'];
     </div>
 
     <!-- Footer -->
-    <footer class="footer-section">
-        <div class="container relative">
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
-                    <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Tokobekas<span>.</span></a></div>
-                    <p class="mb-4">Dengan Tokobekas, Anda bisa menjual barang bekas yang tidak terpakai dan mendapatkan uang tambahan. Platform kami menghubungkan Anda langsung dengan pembeli tanpa perantara. Jual beli barang bekas kini jadi lebih mudah dan aman</p>
-
-                    <ul class="list-unstyled custom-social">
-                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-                    </ul>
+<footer class="footer-section">
+    <div class="container relative">
+        <div class="row g-3"> <!-- Mengurangi jarak antar kolom -->
+            <div class="col-lg-4">
+                <div class="mb-2 footer-logo-wrap"> <!-- Mengurangi margin bawah -->
+                    <a href="#" class="footer-logo" style="font-size: 1rem;">Tokobekas<span>.</span></a>
                 </div>
+                <p class="mb-1" style="font-size: 0.6rem;"> <!-- Mengurangi ukuran font pada teks -->
+                    Dengan Tokobekas, Anda bisa menjual barang bekas yang tidak terpakai dan mendapatkan uang tambahan. Platform kami menghubungkan Anda langsung dengan pembeli tanpa perantara. Jual beli barang bekas kini jadi lebih mudah dan aman.
+                </p>
+                <ul class="list-unstyled custom-social" style="font-size: 0.8rem;"> <!-- Mengurangi ukuran font pada ikon -->
+                    <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+                    <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+                    <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                </ul>
             </div>
-            <div class="border-top copyright">
-                <div class="row pt-4">
-                    <div class="col-lg-6">
-                        <p class="mb-2 text-center text-lg-start">Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
-                            Developed by <a>Andreas Jeno Figo Topuh dkk</a>
-                        </p>
+
+            <div class="col-lg-8">
+                <div class="row links-wrap">
+                    <div class="col-6 col-sm-6 col-md-3">
+                        <ul class="list-unstyled">
+                            <li><a href="#" style="font-size: 0.875rem;">About Us</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </footer>
+
+        <div class="border-top copyright">
+            <div class="row> <!-- Mengurangi padding atas -->
+                <div class="col-lg-6">
+                    <p class="mb-1 text-center text-lg-start" style="font-size: 0.75rem;"> <!-- Mengurangi ukuran font -->
+                        Copyright &copy;
+                        <script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
+                        Developed by <a>Andreas Jeno Figo Topuh dkk</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>

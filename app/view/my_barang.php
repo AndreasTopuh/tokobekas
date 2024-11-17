@@ -126,12 +126,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_barang'])) {
 
 <footer class="footer-section">
     <div class="container relative">
-        <div class="row g-3 mb-3"> <!-- Mengurangi jarak antar kolom -->
+        <div class="row g-3"> <!-- Mengurangi jarak antar kolom -->
             <div class="col-lg-4">
-                <div class="mb-3 footer-logo-wrap"> <!-- Mengurangi margin bawah -->
-                    <a href="#" class="footer-logo" style="font-size: 1.2rem;">Tokobekas<span>.</span></a>
+                <div class="mb-2 footer-logo-wrap"> <!-- Mengurangi margin bawah -->
+                    <a href="#" class="footer-logo" style="font-size: 1rem;">Tokobekas<span>.</span></a>
                 </div>
-                <p class="mb-3" style="font-size: 0.875rem;"> <!-- Mengurangi ukuran font pada teks -->
+                <p class="mb-1" style="font-size: 0.6rem;"> <!-- Mengurangi ukuran font pada teks -->
                     Dengan Tokobekas, Anda bisa menjual barang bekas yang tidak terpakai dan mendapatkan uang tambahan. Platform kami menghubungkan Anda langsung dengan pembeli tanpa perantara. Jual beli barang bekas kini jadi lebih mudah dan aman.
                 </p>
                 <ul class="list-unstyled custom-social" style="font-size: 0.8rem;"> <!-- Mengurangi ukuran font pada ikon -->
@@ -154,7 +154,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_barang'])) {
         </div>
 
         <div class="border-top copyright">
-            <div class="row pt-3"> <!-- Mengurangi padding atas -->
+            <div class="row> <!-- Mengurangi padding atas -->
                 <div class="col-lg-6">
                     <p class="mb-1 text-center text-lg-start" style="font-size: 0.75rem;"> <!-- Mengurangi ukuran font -->
                         Copyright &copy;
