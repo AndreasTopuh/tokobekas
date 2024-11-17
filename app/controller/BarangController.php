@@ -47,7 +47,7 @@ class BarangController {
                 $userId = $_SESSION['user']['id'];
 
                 if ($this->addBarang($data, $userId)) {
-                    header("Location: ../view/barang_list.php");
+                    header("Location: /tokobekas/app/view/barang_list.php");
                     exit();
                 } else {
                     echo "Gagal menambahkan barang.";
