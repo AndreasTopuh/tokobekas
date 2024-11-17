@@ -58,6 +58,14 @@ class BarangController {
     public function showUserBarang($userId) {
         return $this->barangModel->getBarangByUser($userId);
     }
+    // BarangController.php
+// BarangController.php
+        public function deleteBarang($id) {
+            $barangModel = new BarangModel();
+            return $barangModel->deleteBarang($id);
+        }
+
+
 }
 
 $barangController = new BarangController();
