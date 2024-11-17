@@ -310,7 +310,7 @@ $user = $_SESSION['user'];
 
                                         <div class="author-info">
                                             <div class="author-pic">
-                                                <img src="/tokobekas/public/images/andreasCTO.JPEG" alt="Andreas Jeno Figo Topuh" class="img-fluid">
+                                                <img src="/tokobekas/public/images/andreasCTO.jpeg" alt="Andreas Jeno Figo Topuh" class="img-fluid">
                                             </div>
                                             <h3 class="font-weight-bold">Andreas Jeno Figo Topuh</h3>
                                             <span class="position d-block mb-3">CEO & CTO, Tokobekas</span>

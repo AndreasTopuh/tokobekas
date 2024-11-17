@@ -36,12 +36,10 @@ public function getBarangByUser($userId) {
 
 
 public function addBarang($data, $userId) {
-
-
     // Query untuk menambahkan data barang beserta nama file gambar
     $query = "INSERT INTO " . $this->table_name . " 
-              (nama, harga, kondisi, jenis, status, nomor_penjual, deskripsi, id_user) 
-              VALUES (:nama, :harga, :kondisi, :jenis, :status, :nomor_penjual, :deskripsi, :id_user)";
+              (nama, harga, kondisi, jenis, status, nomor_penjual, deskripsi, gambar, id_user) 
+              VALUES (:nama, :harga, :kondisi, :jenis, :status, :nomor_penjual, :deskripsi, :gambar, :id_user)";
     
     // Siapkan statement
     $stmt = $this->conn->prepare($query);
@@ -54,13 +52,13 @@ public function addBarang($data, $userId) {
     $stmt->bindParam(':status', $data['status']);
     $stmt->bindParam(':nomor_penjual', $data['nomor_penjual']);
     $stmt->bindParam(':deskripsi', $data['deskripsi']);
+    $stmt->bindParam(':gambar', $data['gambar']); // Menyimpan nama gambar
     $stmt->bindParam(':id_user', $userId);
-    
-
 
     // Eksekusi query dan kembalikan hasilnya
     return $stmt->execute();
 }
+
 
 
 
