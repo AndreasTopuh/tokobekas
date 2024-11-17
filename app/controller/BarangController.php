@@ -4,6 +4,7 @@ namespace Controller;
 require_once __DIR__ . '/../model/BarangModel.php'; // Pastikan path ini benar
 
 use Model\BarangModel;
+use Exception;
 
 class BarangController {
     private $barangModel;
@@ -36,6 +37,7 @@ class BarangController {
                 'status' => $_POST['status'],
                 'nomor_penjual' => $_POST['nomor_penjual'],
                 'deskripsi' => $_POST['deskripsi'],
+                'gambar' => $_FILES['gambar']
                 
             ];
 

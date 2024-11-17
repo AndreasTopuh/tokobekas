@@ -40,7 +40,7 @@ public function addBarang($data, $userId) {
         $tmp = $_FILES['gambar']['tmp_name'];
 
         // Tentukan folder tujuan untuk menyimpan gambar
-        $folderPath = __DIR__ . "/../../public/images/fotobarang/";
+        $folderPath = $_SERVER['DOCUMENT_ROOT'] . "/tokobekas/public/images/fotobarang/";
 
         // Pastikan folder tujuan ada
         if (!is_dir($folderPath)) {
@@ -80,6 +80,7 @@ public function addBarang($data, $userId) {
     // Eksekusi query dan kembalikan hasilnya
     return $stmt->execute();
 }
+
 
 
 
