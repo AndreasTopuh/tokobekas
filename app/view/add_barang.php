@@ -62,10 +62,10 @@ $user = $_SESSION['user'];
                 <input type="text" name="nama" id="nama" class="form-control" placeholder="cth Laptop Axio" required>
             </div>
             
-            <!-- <div class="mb-3 ">
+            <div class="mb-3 ">
                 <label for="gambar" class="form-label"><strong>Gambar Barang</strong></label>
                 <input type="file" name="gambar" id="gambar" class="form-control" required>
-            </div> -->
+            </div>
 
             <div class="mb-3">
                 <label for="harga" class="form-label"><strong>Harga</strong> </label>
