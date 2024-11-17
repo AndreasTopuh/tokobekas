@@ -36,7 +36,8 @@ class BarangController {
                 'jenis' => $_POST['jenis'],
                 'status' => $_POST['status'],
                 'nomor_penjual' => $_POST['nomor_penjual'],
-                'deskripsi' => $_POST['deskripsi']
+                'deskripsi' => $_POST['deskripsi'],
+                'gambar' => $_FILES['gambar']
                 
             ];
 
