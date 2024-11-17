@@ -57,22 +57,22 @@ $user = $_SESSION['user'];
         <h2 class="text-left mb-4">Tambah Barang Bekas Anda</h2>
         <form method="POST" action="/tokobekas/app/controller/BarangController.php" class="shadow-lg text-sm p-4 bg-white rounded" enctype="multipart/form-data" onsubmit="cleanRupiah()">
 
-            <div class="mb-3 shadow-lg">
+            <div class="mb-3 ">
                 <label for="nama" class="form-label"><strong>Nama Barang</strong></label>
                 <input type="text" name="nama" id="nama" class="form-control" placeholder="cth Laptop Axio" required>
             </div>
             
-            <div class="mb-3 shadow-lg">
+            <div class="mb-3 ">
                 <label for="gambar" class="form-label"><strong>Gambar Barang</strong></label>
                 <input type="file" name="gambar" id="gambar" class="form-control" required>
             </div>
 
-            <div class="mb-3 shadow-lg">
+            <div class="mb-3">
                 <label for="harga" class="form-label"><strong>Harga</strong> </label>
                 <input type="text" name="harga" id="harga" class="form-control" placeholder="Masukkan harga" oninput="formatRupiah(this)" required>
             </div>
 
-            <div class="mb-3 shadow-lg">
+            <div class="mb-3 ">
                 <label for="kondisi" class="form-label"><strong>Kondisi</strong></label>
                 <select name="kondisi" id="kondisi" class="form-select" required>
                     <option value="bekas">Bekas</option>
@@ -80,7 +80,7 @@ $user = $_SESSION['user'];
                 </select>
             </div>
 
-            <div class="mb-3 shadow-lg">
+            <div class="mb-3">
                 <label for="jenis" class="form-label"><strong>Jenis Barang</strong></label>
                 <select name="jenis" id="jenis" class="form-select" placeholder="Jenis Barang">
                     <option value="">Pilih Jenis Barang</option>
@@ -101,19 +101,19 @@ $user = $_SESSION['user'];
                 </select>
             </div>
 
-            <div class="mb-3 shadow-lg">
+            <div class="mb-3 ">
                 <label for="status" class="form-label"><strong>Status</strong></label>
                 <select name="status" id="status" class="form-select" required>
                     <option value="tersedia">Tersedia</option>
                 </select>
             </div>
 
-            <div class="mb-3 shadow-lg">
+            <div class="mb-3 ">
                 <label for="nomor_penjual" class="form-label"><strong>Nomor Penjual</strong></label>
                 <input type="text" name="nomor_penjual" id="nomor_penjual" class="form-control" placeholder="cth 0857********" required>
             </div>
 
-            <div class="mb-3 shadow-lg">
+            <div class="mb-3">
                 <label for="deskripsi" class="form-label">Deskripsi</label>
                 <textarea name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsikan kekurangan barang anda" rows="4" maxlength="auto"></textarea>
             </div>
