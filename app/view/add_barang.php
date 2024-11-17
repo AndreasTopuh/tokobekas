@@ -55,7 +55,8 @@ $user = $_SESSION['user'];
     <!-- Form Tambah Barang -->
     <div class="container mt-5">
         <h2 class="text-left mb-4">Tambah Barang Bekas Anda</h2>
-        <form method="POST" action="../controller/BarangController.php" class="shadow-lg text-sm p-4 bg-white rounded" enctype="multipart/form-data" onsubmit="cleanRupiah()">
+        <form method="POST" action="/tokobekas/app/controller/BarangController.php" class="shadow-lg text-sm p-4 bg-white rounded" enctype="multipart/form-data" onsubmit="cleanRupiah()">
+
             <div class="mb-3 shadow-lg">
                 <label for="nama" class="form-label"><strong>Nama Barang</strong></label>
                 <input type="text" name="nama" id="nama" class="form-control" placeholder="cth Laptop Axio" required>
