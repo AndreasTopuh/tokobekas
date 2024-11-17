@@ -67,9 +67,9 @@ $user = $_SESSION['user'];
 					</div>
 				</div>
 <div class="col-lg-7 col-md-4">
-    <div class="hero-img-wrap">
+    <!-- <div class="hero-img-wrap">
         <img src="/tokobekas/public/images/gambar_brg_bekass.png" class="img-fluid">
-    </div>
+    </div> -->
 </div>
 
 			</div>
