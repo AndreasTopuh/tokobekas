@@ -121,33 +121,73 @@ $user = $_SESSION['user'];
     </div>
 
     <!-- Footer -->
-    <footer class="footer-section">
-        <div class="container relative">
-            <div class="row g-5 mb-5">
-                <div class="col-lg-4">
-                    <div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Tokobekas<span>.</span></a></div>
-                    <p class="mb-4">Dengan Tokobekas, Anda bisa menjual barang bekas yang tidak terpakai dan mendapatkan uang tambahan. Platform kami menghubungkan Anda langsung dengan pembeli tanpa perantara. Jual beli barang bekas kini jadi lebih mudah dan aman</p>
+	<footer class="footer-section">
+		<div class="container relative">
 
-                    <ul class="list-unstyled custom-social">
-                        <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-                        <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-                        <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-                        <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="border-top copyright">
-                <div class="row pt-4">
-                    <div class="col-lg-6">
-                        <p class="mb-2 text-center text-lg-start">Copyright &copy;
-                            <script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
-                            Developed by <a>Andreas Jeno Figo Topuh dkk</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+	
+
+
+
+			<div class="row g-5 mb-5">
+				<div class="col-lg-4">
+					<div class="mb-4 footer-logo-wrap"><a href="#" class="footer-logo">Tokobekas<span>.</span></a></div>
+					<p class="mb-4">Dengan Tokobekas, Anda bisa menjual barang bekas yang tidak terpakai dan mendapatkan uang tambahan. Platform kami menghubungkan Anda langsung dengan pembeli tanpa perantara. Jual beli barang bekas kini jadi lebih mudah dan aman</p>
+
+					<ul class="list-unstyled custom-social">
+						<li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
+						<li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+					</ul>
+				</div>
+
+				<div class="col-lg-8">
+					<div class="row links-wrap">
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+				
+								<li><a href="#">About Us</a></li>
+			
+							</ul>
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">About Us</a></li>
+			
+							</ul>
+						</div>
+
+						<div class="col-6 col-sm-6 col-md-3">
+							<ul class="list-unstyled">
+								<li><a href="#">About Us</a></li>
+						
+							</ul>
+						</div>
+
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="border-top copyright">
+				<div class="row pt-4">
+					<div class="col-lg-6">
+						<p class="mb-2 text-center text-lg-start">Copyright &copy;
+							<script>document.write(new Date().getFullYear());</script>. All Rights Reserved. &mdash;
+							Develop by <a>Andreas Jeno Figo Topuh dkk</a> 
+					
+						</p>
+					</div>
+
+
+
+				</div>
+			</div>
+
+		</div>
+	</footer>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
