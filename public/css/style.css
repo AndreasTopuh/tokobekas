@@ -1086,3 +1086,12 @@ textarea {
   padding: 0;
   box-sizing: border-box;
 }
+
+.card-img-top {
+  width: 100%;
+  /* Pastikan gambar mengisi lebar kontainer */
+  height: 200px;
+  /* Tentukan tinggi gambar yang seragam */
+  object-fit: cover;
+  /* Gambar akan dipotong agar menutupi area tanpa merusak proporsinya */
+}

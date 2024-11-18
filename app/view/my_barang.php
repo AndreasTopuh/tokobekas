@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_barang'])) {
                 <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
                     <div class="card h-100 shadow">
                         <div class="card-body d-flex flex-column">
-                             <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top" alt="<?= htmlspecialchars($barang['nama']); ?>">
+                             <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top img-fluid custom-img shadow-sm p-2" alt="Gambar Barang"">
                             
                             <h5 class="card-title text-primary"><?= htmlspecialchars($barang['nama']); ?></h5>
                             <h6 class="card-subtitle mb-2 text-muted"><?= htmlspecialchars($barang['jenis']); ?> - <?= htmlspecialchars($barang['kondisi']); ?></h6>
