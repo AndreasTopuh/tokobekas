@@ -77,15 +77,24 @@ $user = $_SESSION['user'];
                     <option value="baru">Baru</option>
                 </select>
             </div>
-
             <div class="mb-3">
                 <label for="jenis" class="form-label"><strong>Jenis Barang</strong></label>
-                <select name="jenis" id="jenis" class="form-select">
+                <select name="jenis" id="jenis" class="form-select" placeholder="Jenis Barang">
                     <option value="">Pilih Jenis Barang</option>
                     <option value="Elektronik">Elektronik</option>
                     <option value="Furnitur">Furnitur</option>
                     <option value="Pakaian">Pakaian</option>
-                    <!-- Tambahkan jenis lainnya -->
+                    <option value="Sepatu">Sepatu</option>
+                    <option value="Tas">Tas</option>
+                    <option value="Peralatan Rumah Tangga">Peralatan Rumah Tangga</option>
+                    <option value="Mainan">Mainan</option>
+                    <option value="Buku">Buku</option>
+                    <option value="Kendaraan">Kendaraan</option>
+                    <option value="Alat Olahraga">Alat Olahraga</option>
+                    <option value="Komputer & Aksesoris">Komputer & Aksesoris</option>
+                    <option value="Peralatan Dapur">Peralatan Dapur</option>
+                    <option value="Alat Musik">Alat Musik</option>
+                    <option value="Lainnya">Lainnya</option>
                 </select>
             </div>
 
