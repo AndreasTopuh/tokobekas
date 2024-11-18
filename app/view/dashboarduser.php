@@ -335,7 +335,7 @@ $user = $_SESSION['user'];
 
                                         <div class="author-info">
                                             <div class="author-pic">
-                                                <img src="/tokobekas/public/images/person_1.jpg" alt="Rey Wongkaren" class="img-fluid">
+                                                <img src="/tokobekas/public/images/reydev.jpeg" alt="Rey Wongkaren" class="img-fluid">
                                             </div>
                                             <h3 class="font-weight-bold">Rey Wongkaren</h3>
                                             <span class="position d-block mb-3">Developer</span>
