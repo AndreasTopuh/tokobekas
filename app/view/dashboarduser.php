@@ -79,6 +79,91 @@ $user = $_SESSION['user'];
 	</div>
     <!-- End Hero Section -->
 
+	<!-- Start Product Carousel -->
+	<div class="testimonial-slider">
+
+                        <!-- Testimonial 1 - Andreas Jeno Figo Topuh -->
+                        <div class="item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 mx-auto">
+                                    <div class="testimonial-block text-center">
+                                        <!-- <blockquote class="mb-5">
+                                            <p>&ldquo;Tokobekas has truly transformed how we see the second-hand market. 
+                                                The ease of use and security of the platform have allowed us to 
+                                                build a reliable community of buyers and sellers. Our goal is to 
+                                                continue improving and provide a seamless experience for everyone.&rdquo;</p>
+                                        </blockquote> -->
+
+                                        <div class="author-info">
+                                            <div class="author-pic">
+                                                <img src="/tokobekas/public/images/laptopbekas" alt="img1" class="img-fluid">
+                                            </div>
+                                            <h3 class="font-weight-bold">Andreas Jeno Figo Topuh</h3>
+                                            <span class="position d-block mb-3">CEO & CTO, Tokobekas</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Testimonial 1 -->
+
+                        <!-- Testimonial 2 - Rey Wongkaren -->
+                        <div class="item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 mx-auto">
+                                    <div class="testimonial-block text-center">
+                                        <!-- <blockquote class="mb-5">
+                                            <p>&ldquo;Working with the Tokobekas team has been an incredible experience. 
+                                                The platform's development has come a long way, and I'm excited 
+                                                for what's to come. We continuously strive to enhance the user 
+                                                experience, making buying and selling used items simple and secure.&rdquo;</p>
+                                        </blockquote> -->
+
+                                        <div class="author-info">
+                                            <div class="author-pic">
+                                                <img src="/tokobekas/public/images/jam_ex" alt="img2" class="img-fluid">
+                                            </div>
+                                            <h3 class="font-weight-bold">Rey Wongkaren</h3>
+                                            <span class="position d-block mb-3">Developer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Testimonial 2 -->
+
+                        <!-- Testimonial 3 - Jerico -->
+                        <div class="item">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8 mx-auto">
+                                    <div class="testimonial-block text-center">
+                                        <!-- <blockquote class="mb-5">
+                                            <p>&ldquo;I've been a part of Tokobekas since the very beginning, and seeing how 
+                                                it has evolved has been nothing short of amazing. The platform has 
+                                                become a reliable space for people to safely buy and sell used goods, 
+                                                and it's great to be part of such an impactful project.&rdquo;</p>
+                                        </blockquote> -->
+
+                                        <div class="author-info">
+                                            <div class="author-pic">
+                                                <img src="/tokobekas/public/images/iphone12_ex" alt="img3" class="img-fluid">
+                                            </div>
+                                            <h3 class="font-weight-bold">Jerico</h3>
+                                            <span class="position d-block mb-3">Developer</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- END Testimonial 3 -->
+
+                    </div>
+
+
+
+	<!-- End Product Carousel -->
+
+
     <!-- Start Product Section -->
 	<div class="product-section">
 		<div class="container">
