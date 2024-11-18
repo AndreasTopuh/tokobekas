@@ -96,10 +96,10 @@ $user = $_SESSION['user'];
 
                                         <div class="author-info">
                                             <div class="author-pic">
-                                                <img src="/tokobekas/public/images/laptopbekas" alt="img1" class="img-fluid">
+                                                <img src="/tokobekas/public/images/laptopbekas.jpg" alt="img1" class="img-fluid">
                                             </div>
-                                            <h3 class="font-weight-bold">Andreas Jeno Figo Topuh</h3>
-                                            <span class="position d-block mb-3">CEO & CTO, Tokobekas</span>
+                                            <h3 class="font-weight-bold">Laptop Bekas</h3>
+                                            <span class="position d-block mb-3">Rp. 2.500.000</span>
                                         </div>
                                     </div>
                                 </div>
@@ -121,10 +121,10 @@ $user = $_SESSION['user'];
 
                                         <div class="author-info">
                                             <div class="author-pic">
-                                                <img src="/tokobekas/public/images/jam_ex" alt="img2" class="img-fluid">
+                                                <img src="/tokobekas/public/images/jam_ex.png" alt="img2" class="img-fluid">
                                             </div>
-                                            <h3 class="font-weight-bold">Rey Wongkaren</h3>
-                                            <span class="position d-block mb-3">Developer</span>
+                                            <h3 class="font-weight-bold">Jam Bekas</h3>
+                                            <span class="position d-block mb-3">Rp. 250.000</span>
                                         </div>
                                     </div>
                                 </div>
@@ -146,10 +146,10 @@ $user = $_SESSION['user'];
 
                                         <div class="author-info">
                                             <div class="author-pic">
-                                                <img src="/tokobekas/public/images/iphone12_ex" alt="img3" class="img-fluid">
+                                                <img src="/tokobekas/public/images/iphone12_ex.png" alt="img3" class="img-fluid">
                                             </div>
-                                            <h3 class="font-weight-bold">Jerico</h3>
-                                            <span class="position d-block mb-3">Developer</span>
+                                            <h3 class="font-weight-bold">Iphone 12</h3>
+                                            <span class="position d-block mb-3">Rp. 17.000.000</span>
                                         </div>
                                     </div>
                                 </div>
