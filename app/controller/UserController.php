@@ -34,32 +34,28 @@ class UserController {
         exit();
     }
 
-public function register($nama, $email, $password) {
-    // Start session if not started yet
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
+    public function register($nama, $email, $password) {
+        // Check if the email is already registered
+        if ($this->userModel->emailExists($email)) {
+            $_SESSION['error'] = "Email already registered!";
+            header("Location: /tokobekas/app/view/register.php");
+            exit();
+        }
 
-    // Check if email already exists
-    if ($this->userModel->emailExists($email)) {
-        $_SESSION['error'] = "Email already registered!";
-        // Redirect back to register page
-        header("Location: /tokobekas/app/view/register.php");
-        exit();
-    }
+        // Hash the password before saving it
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT); // Hash the password
 
-    // Try to register the user
-    if ($this->userModel->register($nama, $email, $password)) {
-        // Set success message in session
-        $_SESSION['success'] = "Registration successful! Please log in.";
-        header("Location: /tokobekas/");
-        exit();
-    } else {
-        $_SESSION['error'] = "Failed to register!";
-        header("Location: /tokobekas/app/view/register.php");
-        exit();
+        // Try to register the user with the hashed password
+        if ($this->userModel->register($nama, $email, $hashedPassword)) {
+            $_SESSION['success'] = "Registration successful! Please log in.";
+            header("Location: /tokobekas/");
+            exit();
+        } else {
+            $_SESSION['error'] = "Failed to register!";
+            header("Location: /tokobekas/app/view/register.php");
+            exit();
+        }
     }
-}
 
 }
 
