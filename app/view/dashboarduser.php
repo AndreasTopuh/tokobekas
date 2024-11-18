@@ -360,7 +360,7 @@ $user = $_SESSION['user'];
 
                                         <div class="author-info">
                                             <div class="author-pic">
-                                                <img src="/tokobekas/public/images/person_1.jpg" alt="Jerico" class="img-fluid">
+                                                <img src="/tokobekas/public/images/JerricoW.jpeg" alt="Jerico" class="img-fluid">
                                             </div>
                                             <h3 class="font-weight-bold">Jerico</h3>
                                             <span class="position d-block mb-3">Developer</span>
