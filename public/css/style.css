@@ -1087,11 +1087,8 @@ textarea {
   box-sizing: border-box;
 }
 
-.card-img-top {
+/* .card-img-top {
   width: 100%;
-  /* Pastikan gambar mengisi lebar kontainer */
-  height: 200px;
-  /* Tentukan tinggi gambar yang seragam */
+  height: 300px;
   object-fit: cover;
-  /* Gambar akan dipotong agar menutupi area tanpa merusak proporsinya */
-}
+} */

@@ -72,7 +72,7 @@ $user = $_SESSION['user'];
         <?php foreach ($barangList as $barang): ?>
             <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
                 <div class="card" style="width: 100%;">
-                    <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top img-fluid custom-img shadow-sm p-2" alt="Gambar Barang">
+                    <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top img-fluid custom-img shadow-sm" alt="Gambar Barang">
 
                     <div class="card-body shadow-sm">
                         <h5 class="card-title"><?= htmlspecialchars($barang['nama']); ?></h5>
