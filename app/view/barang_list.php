@@ -71,7 +71,7 @@ $user = $_SESSION['user'];
     <?php if ($barangList): ?>
         <?php foreach ($barangList as $barang): ?>
 <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-    <div class="card" style="width: 100%; max-height: 300px">
+    <div class="card" style="width: 100%">
         <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top img-fluid custom-img shadow-sm" alt="Gambar Barang">
 
         <div class="card-body shadow-sm" style="max-height: 200px; overflow-y: auto;">
