@@ -17,7 +17,7 @@ class UserController {
 
         if ($user) {
             $_SESSION['user'] = $user;
-            header("Location: /tokobekas/app/view/dashboarduser.php");
+            header("Location: /tokobekas/app/view/barang_list.php");
             exit();
         } else {
             $_SESSION['error'] = $this->userModel->emailExists($email) ? 
