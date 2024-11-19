@@ -35,6 +35,9 @@
         .form-control.is-valid {
             border-color: #28a745;
         }
+        .invalid-feedback {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -46,23 +49,17 @@
                 <!-- Register Title -->
                 <h2 class="text-center mb-4">Daftar</h2>
                 
-                <form method="POST" action="/tokobekas/">
+                <form method="POST" action="/tokobekas/" onsubmit="return validateForm()">
                     <div class="mb-3">
                         <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
                     </div>
                     <div class="mb-3">
-                        <input type="email" name="email" class="form-control <?= isset($_SESSION['email_error']) ? 'is-invalid' : ''; ?>" placeholder="Email" required>
-                        <?php if (isset($_SESSION['email_error'])): ?>
-                            <div class="invalid-feedback"><?= $_SESSION['email_error']; ?></div>
-                            <?php unset($_SESSION['email_error']); ?>
-                        <?php endif; ?>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+                        <div id="emailError" class="invalid-feedback" style="display: none;">Email harus menggunakan domain @gmail.com</div>
                     </div>
                     <div class="mb-3">
-                        <input type="password" name="password" class="form-control <?= isset($_SESSION['password_error']) ? 'is-invalid' : ''; ?>" placeholder="Password" required>
-                        <?php if (isset($_SESSION['password_error'])): ?>
-                            <div class="invalid-feedback"><?= $_SESSION['password_error']; ?></div>
-                            <?php unset($_SESSION['password_error']); ?>
-                        <?php endif; ?>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                        <div id="passwordError" class="invalid-feedback" style="display: none;">Password harus memiliki minimal 5 karakter dan mengandung setidaknya satu angka.</div>
                     </div>
                     <button type="submit" name="register" class="btn btn-success w-100">Daftar</button>
                 </form>
@@ -84,5 +81,66 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Validasi form saat submit
+        function validateForm() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let isValid = true;
+
+            // Validasi Email (harus mengandung @gmail.com)
+            if (!email.includes('@gmail.com')) {
+                document.getElementById("emailError").style.display = "block";
+                document.getElementById("email").classList.add("is-invalid");
+                isValid = false;
+            } else {
+                document.getElementById("emailError").style.display = "none";
+                document.getElementById("email").classList.remove("is-invalid");
+                document.getElementById("email").classList.add("is-valid");
+            }
+
+            // Validasi Password (minimal 5 karakter dan mengandung angka)
+            const passwordRegex = /.*\d.*/; // Mengandung setidaknya 1 angka
+            if (password.length < 5 || !passwordRegex.test(password)) {
+                document.getElementById("passwordError").style.display = "block";
+                document.getElementById("password").classList.add("is-invalid");
+                isValid = false;
+            } else {
+                document.getElementById("passwordError").style.display = "none";
+                document.getElementById("password").classList.remove("is-invalid");
+                document.getElementById("password").classList.add("is-valid");
+            }
+
+            return isValid;
+        }
+
+        // Instant feedback untuk email
+        document.getElementById("email").addEventListener("input", function() {
+            let email = this.value;
+            if (!email.includes('@gmail.com')) {
+                document.getElementById("emailError").style.display = "block";
+                this.classList.add("is-invalid");
+            } else {
+                document.getElementById("emailError").style.display = "none";
+                this.classList.remove("is-invalid");
+                this.classList.add("is-valid");
+            }
+        });
+
+        // Instant feedback untuk password
+        document.getElementById("password").addEventListener("input", function() {
+            let password = this.value;
+            const passwordRegex = /.*\d.*/; // Mengandung setidaknya 1 angka
+            if (password.length < 5 || !passwordRegex.test(password)) {
+                document.getElementById("passwordError").style.display = "block";
+                this.classList.add("is-invalid");
+            } else {
+                document.getElementById("passwordError").style.display = "none";
+                this.classList.remove("is-invalid");
+                this.classList.add("is-valid");
+            }
+        });
+    </script>
 </body>
 </html>
