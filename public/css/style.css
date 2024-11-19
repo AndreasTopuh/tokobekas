@@ -1042,6 +1042,7 @@ textarea {
   /* Opsional: Sudut melengkung */
 }
 
+/* Untuk tablet dan perangkat dengan ukuran layar lebih kecil dari 768px */
 @media (max-width: 768px) {
   .card {
     margin: 8px 0;
@@ -1050,23 +1051,63 @@ textarea {
 
   .custom-img {
     height: 150px;
-    /* Sesuaikan ukuran gambar di layar kecil */
+    /* Sesuaikan ukuran gambar di layar tablet */
+    object-fit: cover;
+    /* Memastikan gambar terpotong dengan baik */
+  }
+
+  /* Ukuran font judul dan teks di card */
+  .card-title {
+    font-size: 1rem;
+    /* Mengurangi ukuran font judul */
+  }
+
+  .card-subtitle {
+    font-size: 0.9rem;
+    /* Mengurangi ukuran font subtitle */
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    /* Mengurangi ukuran font deskripsi */
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    /* Mengurangi ukuran font tombol */
   }
 }
 
-/* Menyesuaikan ukuran gambar untuk layar tab */
-@media (max-width: 768px) {
-  .hero-img-wrap img {
-    width: 100%;
-    /* Pastikan gambar menyesuaikan lebar container */
-    max-width: 300px;
-    /* Batas maksimum lebar gambar */
-    height: auto;
-    /* Menjaga rasio aspek gambar */
-    margin: 0 auto;
-    /* Memusatkan gambar */
-    display: block;
-    /* Memastikan gambar tampil sebagai elemen block */
+/* Untuk ponsel dan perangkat dengan ukuran layar lebih kecil dari 576px */
+@media (max-width: 576px) {
+  .card {
+    margin: 2px 0;
+  }
+
+  .custom-img {
+    height: 120px;
+  }
+
+  .card-title {
+    font-size: 1rem;
+  }
+
+  .card-subtitle {
+    font-size: 0.6rem;
+  }
+
+  .card-text {
+    font-size: 0.5rem;
+  }
+
+  .btn {
+    font-size: 0.5rem;
+  }
+
+  .col-12 {
+    width: 50%;
+    padding: 5px;
+    padding-bottom: 3px;
   }
 }
 
