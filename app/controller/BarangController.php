@@ -45,11 +45,12 @@ class BarangController {
             $fileName = preg_replace('/[^a-zA-Z0-9-_\.]/', '_', $_FILES['gambar']['name']); // Normalisasi nama file
             $targetFile = $targetDir . $fileName;
             $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
-            $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
+            $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/heic'];
             $fileMimeType = mime_content_type($_FILES['gambar']['tmp_name']);
 
-            // Validasi tipe file
-            if (in_array($imageFileType, ['jpg', 'jpeg', 'png', 'gif']) && in_array($fileMimeType, $allowedMimeTypes)) {
+            // Validasi tipe file berdasarkan ekstensi dan MIME
+            if ((in_array($imageFileType, ['jpg', 'jpeg', 'png', 'gif', 'heic'])) && 
+                (in_array($fileMimeType, $allowedMimeTypes))) {
                 if ($_FILES['gambar']['size'] <= 10 * 1024 * 1024) { // Maksimal 10MB
                     if (move_uploaded_file($_FILES['gambar']['tmp_name'], $targetFile)) {
                         $data['gambar'] = $fileName;
@@ -69,6 +70,7 @@ class BarangController {
             echo "Gambar tidak ditemukan atau terjadi error.";
             exit();
         }
+
 
 
         if (isset($_SESSION['user']['id'])) {
