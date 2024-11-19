@@ -70,34 +70,39 @@ $user = $_SESSION['user'];
 <div class="row">
     <?php if ($barangList): ?>
         <?php foreach ($barangList as $barang): ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
-                <div class="card" style="width: 100%;">
-                    <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top img-fluid custom-img shadow-sm" alt="Gambar Barang">
+<div class="col-lg-3 col-md-4 col-sm-6 col-12 mb-4">
+    <div class="card" style="width: 100%; max-height: 400px; overflow: hidden;">
+        <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top img-fluid custom-img shadow-sm" alt="Gambar Barang">
 
-                    <div class="card-body shadow-sm">
-                        <h5 class="card-title"><?= htmlspecialchars($barang['nama']); ?></h5>
-                        <h6 class="card-subtitle mb-2 text-body-secondary"><?= htmlspecialchars($barang['jenis']); ?> - <?= htmlspecialchars($barang['kondisi']); ?></h6>
-                        <p class="card-text">
-                            <strong>Harga:</strong> Rp <?= htmlspecialchars(number_format($barang['harga'], 2, ',', '.')); ?>
-                            <br>
-                            <strong>Status:</strong> 
-                            <span class="badge bg-<?= $barang['status'] === 'tersedia' ? 'success' : 'secondary'; ?>">
-                                <?= htmlspecialchars($barang['status']); ?>
-                            </span>
-                            <br>
-                            <strong>Nomor Penjual:</strong> 
-                            <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>" target="_blank" class="text-decoration-none">
-                                <?= htmlspecialchars($barang['nomor_penjual']); ?>
-                            </a><br>
-                            <strong>Deskripsi:</strong> <?= htmlspecialchars($barang['deskripsi']); ?>
-                        </p>
-                        <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>?text=Halo,%20saya%20tertarik%20dengan%20barang%20Anda:%20<?= urlencode($barang['nama']); ?>" 
-                           class="btn btn-primary btn-sm d-flex align-items-center" target="_blank">
-                            <i class="fab fa-whatsapp me-2"></i> Hubungi Penjual
-                        </a>
-                    </div>
-                </div>
-            </div>
+        <div class="card-body shadow-sm" style="max-height: 200px; overflow-y: auto;">
+            <h5 class="card-title"><?= htmlspecialchars($barang['nama']); ?></h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary"><?= htmlspecialchars($barang['jenis']); ?> - <?= htmlspecialchars($barang['kondisi']); ?></h6>
+            <p class="card-text">
+            <strong>Harga:</strong> 
+            <span class="badge bg-dark">
+                Rp <?= htmlspecialchars(number_format($barang['harga'], 2, ',', '.')); ?>
+            </span>
+                <br>
+                <strong>Status:</strong> 
+                <span class="badge bg-<?= $barang['status'] === 'tersedia' ? 'success' : 'danger'; ?>">
+                    <?= htmlspecialchars($barang['status']); ?>
+                </span>
+                <br>
+                <strong>Nomor Penjual:</strong> 
+                <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>" target="_blank" class="text-decoration-none">
+                    <?= htmlspecialchars($barang['nomor_penjual']); ?>
+                </a>
+                <br>
+                <strong>Deskripsi:</strong> <?= htmlspecialchars($barang['deskripsi']); ?>
+            </p>
+            <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>?text=Halo,%20saya%20tertarik%20dengan%20barang%20Anda:%20<?= urlencode($barang['nama']); ?>" 
+               class="btn btn-primary btn-sm d-flex align-items-center" target="_blank">
+                <i class="fab fa-whatsapp me-2"></i> Hubungi Penjual
+            </a>
+        </div>
+    </div>
+</div>
+
         <?php endforeach; ?>
     <?php else: ?>
         <p class="text-center">Tidak ada barang yang tersedia</p>

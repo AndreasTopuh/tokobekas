@@ -61,7 +61,7 @@ $user = $_SESSION['user'];
 	<div class="hero">
 		<div class="container">
 			<div class="row justify-content-between">
-				<div class="col-lg-5">
+				<div class="col-lg-5 pt-3">
 					<div class="intro-excerpt">
 						<h1>Barang Bekas Terbaik Dengan Harga Terjangkau</h2></h1>
 						<p class="mb-4">Kami menyediakan berbagai macam barang bekas berkualitas dengan harga yang lebih hemat. Temukan barang impian Anda sekarang!</p>
