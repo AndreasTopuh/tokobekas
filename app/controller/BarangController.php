@@ -42,18 +42,23 @@ class BarangController {
         // Mengecek jika ada file gambar yang diupload
         if (isset($_FILES['gambar']) && $_FILES['gambar']['error'] == 0) {
             $targetDir = "/var/www/html/fotobarang/"; // Direktori tempat gambar disimpan
-            $fileName = basename($_FILES['gambar']['name']);
+            $fileName = preg_replace('/[^a-zA-Z0-9-_\.]/', '_', $_FILES['gambar']['name']); // Normalisasi nama file
             $targetFile = $targetDir . $fileName;
             $imageFileType = strtolower(pathinfo($targetFile, PATHINFO_EXTENSION));
+            $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif'];
+            $fileMimeType = mime_content_type($_FILES['gambar']['tmp_name']);
 
-            // Cek apakah file adalah gambar
-            if (in_array($imageFileType, ['jpg', 'jpeg', 'png', 'gif'])) {
-                // Pindahkan file gambar ke direktori tujuan
-                if (move_uploaded_file($_FILES['gambar']['tmp_name'], $targetFile)) {
-                    // Masukkan nama file gambar ke dalam data
-                    $data['gambar'] = $fileName;
+            // Validasi tipe file
+            if (in_array($imageFileType, ['jpg', 'jpeg', 'png', 'gif']) && in_array($fileMimeType, $allowedMimeTypes)) {
+                if ($_FILES['gambar']['size'] <= 10 * 1024 * 1024) { // Maksimal 10MB
+                    if (move_uploaded_file($_FILES['gambar']['tmp_name'], $targetFile)) {
+                        $data['gambar'] = $fileName;
+                    } else {
+                        echo "Gagal mengupload gambar.";
+                        exit();
+                    }
                 } else {
-                    echo "Gagal mengupload gambar.";
+                    echo "Ukuran file terlalu besar.";
                     exit();
                 }
             } else {
@@ -61,9 +66,10 @@ class BarangController {
                 exit();
             }
         } else {
-            echo "Gambar tidak ditemukan.";
+            echo "Gambar tidak ditemukan atau terjadi error.";
             exit();
         }
+
 
         if (isset($_SESSION['user']['id'])) {
             $userId = $_SESSION['user']['id'];
