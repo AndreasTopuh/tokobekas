@@ -74,7 +74,7 @@ $user = $_SESSION['user'];
     <div class="card" style="width: 100%">
         <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top img-fluid custom-img shadow-sm" alt="Gambar Barang">
 
-        <div class="card-body shadow-sm" style="max-height: 200px; overflow-y: auto;">
+        <div class="card-body shadow-sm">
             <h5 class="card-title"><?= htmlspecialchars($barang['nama']); ?></h5>
             <h6 class="card-subtitle mb-2 text-body-secondary"><?= htmlspecialchars($barang['jenis']); ?> - <?= htmlspecialchars($barang['kondisi']); ?></h6>
             <p class="card-text">
