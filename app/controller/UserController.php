@@ -35,6 +35,26 @@ class UserController {
     }
 
     public function register($nama, $email, $password) {
+        if (empty($nama) || empty($email) || empty($password)) {
+            $_SESSION['error'] = "All fields are required!";
+            header("Location: /tokobekas/app/view/register.php");
+            exit();
+        }
+
+        // Validasi email harus mengandung @gmail.com
+        if (strpos($email, '@gmail.com') === false) {
+            $_SESSION['error'] = "Email must be from @gmail.com domain.";
+            header("Location: /tokobekas/app/view/register.php");
+            exit();
+        }
+
+        // Validasi password: minimal 5 karakter dan mengandung setidaknya 1 angka
+        if (strlen($password) < 5 || !preg_match('/\d/', $password)) {
+            $_SESSION['error'] = "Password must be at least 5 characters long and contain at least one number.";
+            header("Location: /tokobekas/app/view/register.php");
+            exit();
+        }
+
         // Check if the email is already registered
         if ($this->userModel->emailExists($email)) {
             $_SESSION['error'] = "Email already registered!";

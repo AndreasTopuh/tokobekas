@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register</title>
-     <link rel="icon" href="/tokobekas/public/images/logo-tokobekas.png" type="image/png">
+    <link rel="icon" href="/tokobekas/public/images/logo-tokobekas.png" type="image/png">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <style>
@@ -29,50 +29,58 @@
             text-align: center;
             margin-top: 10px;
         }
+        .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+        .form-control.is-valid {
+            border-color: #28a745;
+        }
     </style>
 </head>
 <body>
     <div class="container-fluid">
         <div class="row justify-content-center align-items-center vh-100 p-4">
-            <div class="col-lg-6 col-md-8 col-sm-10 register-container ">
-                       <img src="/tokobekas/public/images/logo-tokobekas.png" alt="Logo Toko Bekas" class="img-fluid mb-4" style="max-width: 150px; display: block; margin: 0 auto;">
-            
-            <!-- Register Title -->
-                    <h2 class="text-center mb-4">Daftar</h2>
-                    
-                    <form method="POST" action="/tokobekas/">
-                        <div class="mb-3">
-                            <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="email" name="email" class="form-control" placeholder="Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <input type="password" name="password" class="form-control" placeholder="Password" required>
-                        </div>
-                        <button type="submit" name="register" class="btn btn-success w-100">Daftar</button>
-                    </form>
+            <div class="col-lg-6 col-md-8 col-sm-10 register-container">
+                <img src="/tokobekas/public/images/logo-tokobekas.png" alt="Logo Toko Bekas" class="img-fluid mb-4" style="max-width: 150px; display: block; margin: 0 auto;">
+                
+                <!-- Register Title -->
+                <h2 class="text-center mb-4">Daftar</h2>
+                
+                <form method="POST" action="/tokobekas/">
+                    <div class="mb-3">
+                        <input type="text" name="nama" class="form-control" placeholder="Nama Lengkap" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control <?= isset($_SESSION['email_error']) ? 'is-invalid' : ''; ?>" placeholder="Email" required>
+                        <?php if (isset($_SESSION['email_error'])): ?>
+                            <div class="invalid-feedback"><?= $_SESSION['email_error']; ?></div>
+                            <?php unset($_SESSION['email_error']); ?>
+                        <?php endif; ?>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" name="password" class="form-control <?= isset($_SESSION['password_error']) ? 'is-invalid' : ''; ?>" placeholder="Password" required>
+                        <?php if (isset($_SESSION['password_error'])): ?>
+                            <div class="invalid-feedback"><?= $_SESSION['password_error']; ?></div>
+                            <?php unset($_SESSION['password_error']); ?>
+                        <?php endif; ?>
+                    </div>
+                    <button type="submit" name="register" class="btn btn-success w-100">Daftar</button>
+                </form>
 
-                    <!-- Error & Success messages -->
-                    <?php if (isset($_SESSION['error'])): ?>
-                        <p class="error text-danger"><?= htmlspecialchars($_SESSION['error']); ?></p>
-                        <?php unset($_SESSION['error']); ?>
-                    <?php endif; ?>
+                <!-- Error & Success messages -->
+                <?php if (isset($_SESSION['error'])): ?>
+                    <p class="error text-danger"><?= htmlspecialchars($_SESSION['error']); ?></p>
+                    <?php unset($_SESSION['error']); ?>
+                <?php endif; ?>
 
-                    <?php if (isset($_SESSION['success'])): ?>
-                        <p class="success text-success"><?= htmlspecialchars($_SESSION['success']); ?></p>
-                        <?php unset($_SESSION['success']); ?>
-                    <?php endif; ?>
+                <?php if (isset($_SESSION['success'])): ?>
+                    <p class="success text-success"><?= htmlspecialchars($_SESSION['success']); ?></p>
+                    <?php unset($_SESSION['success']); ?>
+                <?php endif; ?>
 
-                    <p class="text-center mt-3">Sudah punya akun? <a href="/tokobekas/app/view/login.php">Login di sini</a>.</p>
+                <p class="text-center mt-3">Sudah punya akun? <a href="/tokobekas/app/view/login.php">Login di sini</a>.</p>
             </div>
-        </div>   
-
         </div>
-        <!-- Centered Logo -->
-   
- 
-
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
