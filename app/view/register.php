@@ -70,7 +70,7 @@
                     </div>
                     <div class="mb-3 password-field">
                         <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
-                        <span class="eye-icon" onclick="lihatPassword()">👁️</span>
+                        <input type="checkbox" onclick="lihatPassword()" class="eye-icon"> Show Password
                         <div id="passwordError" class="invalid-feedback" style="display: none;">Password harus memiliki minimal 5 karakter dan mengandung setidaknya satu angka.</div>
                     </div>
                     <button type="submit" name="register" class="btn btn-success w-100">Daftar</button>

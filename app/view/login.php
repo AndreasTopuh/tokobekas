@@ -48,6 +48,7 @@
                     </div>
                     <div class="mb-3">
                         <input type="password" name="password" class="form-control" placeholder="Password" required>
+                        <input type="checkbox" onclick="lihatPassword()" class="eye-icon"> Show Password
                     </div>
                     <button type="submit" name="login" class="btn btn-success w-100">Login</button>
                 </form>
@@ -71,16 +72,13 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
+        // Fungsi untuk toggle password visibility
         function lihatPassword() {
-            const passwordField = document.getElementById('password');
-            const eyeIcon = document.querySelector('.eye-icon');
-
-            if (passwordField.type === 'password') {
-                passwordField.type = 'text';
-                eyeIcon.innerHTML = '👁️';
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
             } else {
-                passwordField.type = 'password';
-                eyeIcon.innerHTML = '👁️';
+                x.type = "password";
             }
         }
     </script>
