@@ -38,6 +38,16 @@
         .invalid-feedback {
             display: block;
         }
+        .password-field {
+            position: relative;
+        }
+        .eye-icon {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -55,10 +65,11 @@
                     </div>
                     <div class="mb-3">
                         <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
-                        <div id="emailError" class="invalid-feedback" style="display: none;">Email harus menggunakan domain @gmail.com</div>
+                        <div id="emailError" class="invalid-feedback" style="display: none;">Email harus menggunakan @gmail.com</div>
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 password-field">
                         <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
+                        <span class="eye-icon" onclick="lihatPassword()">👁️</span>
                         <div id="passwordError" class="invalid-feedback" style="display: none;">Password harus memiliki minimal 5 karakter dan mengandung setidaknya satu angka.</div>
                     </div>
                     <button type="submit" name="register" class="btn btn-success w-100">Daftar</button>
@@ -83,6 +94,29 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
+        // Fungsi untuk toggle password visibility
+        // function togglePassword() {
+        //     const passwordField = document.getElementById("password");
+        //     const passwordIcon = document.getElementById("togglePassword");
+
+        //     // Cek tipe password field dan ubah antara 'password' dan 'text'
+        //     if (passwordField.type === "password") {
+        //         passwordField.type = "text";
+        //         passwordIcon.textContent = "🙈"; // Ganti ikon menjadi mata tertutup
+        //     } else {
+        //         passwordField.type = "password";
+        //         passwordIcon.textContent = "👁️"; // Ganti ikon menjadi mata terbuka
+        //     }
+        // }
+        function lihatPassword() {
+            var x = document.getElementById("password");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+
         // Validasi form saat submit
         function validateForm() {
             let email = document.getElementById("email").value;
