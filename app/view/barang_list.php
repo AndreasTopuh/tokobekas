@@ -88,7 +88,7 @@ $user = $_SESSION['user'];
                 </div>
                 <div class="col-md-4 d-flex align-items-center">
                     <button type="submit" class="btn btn-primary me-2">Cari</button>
-                    <a href="barang_list.php" class="btn btn-secondary">Tampilkan Semua Barang</a>
+                    <a href="barang_list.php" class="btn btn-primary me-2">Tampilkan Semua Barang</a>
                 </div>
             </div>
         </form>
