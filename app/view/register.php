@@ -42,12 +42,8 @@
         .password-field {
             position: relative;
         }
-        .eye-icon {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            cursor: pointer;
+        .form-check-label {
+            margin-left: 10px;
         }
     </style>
 </head>
@@ -70,9 +66,15 @@
                     </div>
                     <div class="mb-3 password-field">
                         <input type="password" name="password" class="form-control" id="password" placeholder="Password" required>
-                        <input type="checkbox" onclick="lihatPassword()" class="eye-icon"> Show Password
                         <div id="passwordError" class="invalid-feedback" style="display: none;">Password harus memiliki minimal 5 karakter dan mengandung setidaknya satu angka.</div>
                     </div>
+
+                    <!-- Show Password Checkbox -->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" onclick="lihatPassword()" class="form-check-input" id="showPassword">
+                        <label class="form-check-label" for="showPassword">Show Password</label>
+                    </div>
+
                     <button type="submit" name="register" class="btn btn-success w-100">Daftar</button>
                 </form>
 
@@ -98,71 +100,15 @@
         // Fungsi untuk toggle password visibility
         function lihatPassword() {
             var x = document.getElementById("password");
-            if (x.type === "password") {
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            // Toggle password visibility
+            if (showPasswordCheckbox.checked) {
                 x.type = "text";
             } else {
                 x.type = "password";
             }
         }
-
-        // Validasi form saat submit
-        function validateForm() {
-            let email = document.getElementById("email").value;
-            let password = document.getElementById("password").value;
-            let isValid = true;
-
-            // Validasi Email (harus mengandung @gmail.com)
-            if (!email.includes('@gmail.com')) {
-                document.getElementById("emailError").style.display = "block";
-                document.getElementById("email").classList.add("is-invalid");
-                isValid = false;
-            } else {
-                document.getElementById("emailError").style.display = "none";
-                document.getElementById("email").classList.remove("is-invalid");
-                document.getElementById("email").classList.add("is-valid");
-            }
-
-            // Validasi Password (minimal 5 karakter dan mengandung angka)
-            const passwordRegex = /.*\d.*/; // Mengandung setidaknya 1 angka
-            if (password.length < 5 || !passwordRegex.test(password)) {
-                document.getElementById("passwordError").style.display = "block";
-                document.getElementById("password").classList.add("is-invalid");
-                isValid = false;
-            } else {
-                document.getElementById("passwordError").style.display = "none";
-                document.getElementById("password").classList.remove("is-invalid");
-                document.getElementById("password").classList.add("is-valid");
-            }
-
-            return isValid;
-        }
-
-        // Instant feedback untuk email
-        document.getElementById("email").addEventListener("input", function() {
-            let email = this.value;
-            if (!email.includes('@gmail.com')) {
-                document.getElementById("emailError").style.display = "block";
-                this.classList.add("is-invalid");
-            } else {
-                document.getElementById("emailError").style.display = "none";
-                this.classList.remove("is-invalid");
-                this.classList.add("is-valid");
-            }
-        });
-
-        // Instant feedback untuk password
-        document.getElementById("password").addEventListener("input", function() {
-            let password = this.value;
-            const passwordRegex = /.*\d.*/; // Mengandung setidaknya 1 angka
-            if (password.length < 5 || !passwordRegex.test(password)) {
-                document.getElementById("passwordError").style.display = "block";
-                this.classList.add("is-invalid");
-            } else {
-                document.getElementById("passwordError").style.display = "none";
-                this.classList.remove("is-invalid");
-                this.classList.add("is-valid");
-            }
-        });
     </script>
 </body>
 </html>

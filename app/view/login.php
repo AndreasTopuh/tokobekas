@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-     <link rel="icon" href="/tokobekas/public/images/logo-tokobekas.png" type="image/png">
+    <link rel="icon" href="/tokobekas/public/images/logo-tokobekas.png" type="image/png">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <style>
@@ -29,6 +29,9 @@
             text-align: center;
             margin-top: 10px;
         }
+        .form-check-label {
+            margin-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -47,9 +50,15 @@
                         <input type="email" name="email" class="form-control" placeholder="Email" required>
                     </div>
                     <div class="mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Password" required>
-                        <input type="checkbox" onclick="lihatPassword()" class="eye-icon"> Show Password
+                        <input type="password" name="password" class="form-control" placeholder="Password" required id="password">
                     </div>
+
+                    <!-- Show Password Checkbox -->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" onclick="lihatPassword()" class="form-check-input" id="showPassword">
+                        <label class="form-check-label" for="showPassword">Show Password</label>
+                    </div>
+
                     <button type="submit" name="login" class="btn btn-success w-100">Login</button>
                 </form>
 
@@ -75,7 +84,10 @@
         // Fungsi untuk toggle password visibility
         function lihatPassword() {
             var x = document.getElementById("password");
-            if (x.type === "password") {
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            // Toggle password visibility
+            if (showPasswordCheckbox.checked) {
                 x.type = "text";
             } else {
                 x.type = "password";
