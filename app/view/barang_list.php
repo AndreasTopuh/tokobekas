@@ -92,6 +92,15 @@ $user = $_SESSION['user'];
             </div>
         </form>
 
+        <!-- Tombol untuk menampilkan semua barang -->
+        <form method="get" class="mb-4">
+            <div class="row">
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-secondary">Tampilkan Semua Barang</button>
+                </div>
+            </div>
+        </form>
+
         <div class="row">
             <?php if ($barangList): ?>
                 <?php foreach ($barangList as $barang): ?>
@@ -100,7 +109,7 @@ $user = $_SESSION['user'];
                             <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top img-fluid custom-img shadow-sm" alt="Gambar Barang">
                             <div class="card-body shadow-md">
                                 <h5 class="card-title"><?= htmlspecialchars($barang['nama']); ?></h5>
-                                <h6 class="card-subtitle text-body-secondary"><?= htmlspecialchars($barang['jenis']); ?> - <?= htmlspecialchars($barang['kondisi']); ?></h6>
+                                <h6 class="card-subtitle text-body-secondary "><?= htmlspecialchars($barang['jenis']); ?> - <?= htmlspecialchars($barang['kondisi']); ?></h6>
                                 <p class="card-text">
                                     <strong>Harga:</strong> <span class="badge bg-dark">Rp <?= htmlspecialchars(number_format($barang['harga'], 2, ',', '.')); ?></span>
                                     <strong>Status:</strong> <span class="badge bg-<?= $barang['status'] === 'tersedia' ? 'success' : 'danger'; ?>"><?= htmlspecialchars($barang['status']); ?></span>
