@@ -88,18 +88,19 @@ $user = $_SESSION['user'];
                 </div>
                 <div class="col-md-2">
                     <button type="submit" class="btn btn-primary">Cari</button>
+                    <button type="submit" class="btn btn-secondary">Tampilkan Semua Barang</button>
                 </div>
             </div>
         </form>
 
-        <!-- Tombol untuk menampilkan semua barang -->
+        <!-- Tombol untuk menampilkan semua barang
         <form method="get" class="mb-4">
             <div class="row">
                 <div class="col-md-2">
                     <button type="submit" class="btn btn-secondary">Tampilkan Semua Barang</button>
                 </div>
             </div>
-        </form>
+        </form> -->
 
         <div class="row">
             <?php if ($barangList): ?>
