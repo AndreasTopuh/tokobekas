@@ -23,60 +23,54 @@ class BarangModel {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-public function getBarangByUser($userId) {
-    $query = "SELECT * FROM " . $this->table_name . " WHERE id_user = :id_user";
-    $stmt = $this->conn->prepare($query);
-    $stmt->bindParam(':id_user', $userId);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
+    public function getBarangByJenis($jenis) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE jenis = :jenis";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':jenis', $jenis);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
+    public function getBarangByUser($userId) {
+        $query = "SELECT * FROM " . $this->table_name . " WHERE id_user = :id_user";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id_user', $userId);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
 
+    public function addBarang($data, $userId) {
+        $query = "INSERT INTO " . $this->table_name . " 
+                  (nama, harga, kondisi, jenis, status, nomor_penjual, deskripsi, gambar, id_user) 
+                  VALUES (:nama, :harga, :kondisi, :jenis, :status, :nomor_penjual, :deskripsi, :gambar, :id_user)";
+        
+        $stmt = $this->conn->prepare($query);
 
+        $stmt->bindParam(':nama', $data['nama']);
+        $stmt->bindParam(':harga', $data['harga']);
+        $stmt->bindParam(':kondisi', $data['kondisi']);
+        $stmt->bindParam(':jenis', $data['jenis']);
+        $stmt->bindParam(':status', $data['status']);
+        $stmt->bindParam(':nomor_penjual', $data['nomor_penjual']);
+        $stmt->bindParam(':deskripsi', $data['deskripsi']);
+        $stmt->bindParam(':gambar', $data['gambar']); // Menyimpan nama gambar
+        $stmt->bindParam(':id_user', $userId);
 
+        return $stmt->execute();
+    }
 
-public function addBarang($data, $userId) {
-    // Query untuk menambahkan data barang beserta nama file gambar
-    $query = "INSERT INTO " . $this->table_name . " 
-              (nama, harga, kondisi, jenis, status, nomor_penjual, deskripsi, gambar, id_user) 
-              VALUES (:nama, :harga, :kondisi, :jenis, :status, :nomor_penjual, :deskripsi, :gambar, :id_user)";
-    
-    // Siapkan statement
-    $stmt = $this->conn->prepare($query);
+    public function updateBarang($id, $status) {
+        $query = "UPDATE " . $this->table_name . " SET status = :status WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':status', $status);
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+    }
 
-    // Binding parameter
-    $stmt->bindParam(':nama', $data['nama']);
-    $stmt->bindParam(':harga', $data['harga']);
-    $stmt->bindParam(':kondisi', $data['kondisi']);
-    $stmt->bindParam(':jenis', $data['jenis']);
-    $stmt->bindParam(':status', $data['status']);
-    $stmt->bindParam(':nomor_penjual', $data['nomor_penjual']);
-    $stmt->bindParam(':deskripsi', $data['deskripsi']);
-    $stmt->bindParam(':gambar', $data['gambar']); // Menyimpan nama gambar
-    $stmt->bindParam(':id_user', $userId);
-
-    // Eksekusi query dan kembalikan hasilnya
-    return $stmt->execute();
-}
-
-
-
-
-public function updateBarang($id, $status) {
-    $query = "UPDATE " . $this->table_name . " SET status = :status WHERE id = :id";
-    $stmt = $this->conn->prepare($query);
-    $stmt->bindParam(':status', $status);
-    $stmt->bindParam(':id', $id);
-    return $stmt->execute();
-}
-
-public function deleteBarang($id) {
-    $query = "DELETE FROM " . $this->table_name . " WHERE id = :id";
-    $stmt = $this->conn->prepare($query);
-    $stmt->bindParam(':id', $id);
-    return $stmt->execute();
-}
-
-
-
+    public function deleteBarang($id) {
+        $query = "DELETE FROM " . $this->table_name . " WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id);
+        return $stmt->execute();
+    }
 }

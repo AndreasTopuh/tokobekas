@@ -67,6 +67,22 @@ $user = $_SESSION['user'];
 <div class="container mt-5">
     <h2 class="text-left mb-4">Daftar Barang Bekas</h2>
 
+            <!-- Filter berdasarkan jenis -->
+        <form method="get" class="mb-4">
+            <div class="row">
+                <div class="col-md-4">
+                    <select class="form-control" name="jenis" onchange="this.form.submit()">
+                        <option value="">Pilih Jenis Barang</option>
+                        <option value="Elektronik" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Elektronik' ? 'selected' : '' ?>>Elektronik</option>
+                        <option value="Furniture" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Furniture' ? 'selected' : '' ?>>Furniture</option>
+                        <option value="Pakaian" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Pakaian' ? 'selected' : '' ?>>Pakaian</option>
+                    </select>
+                </div>
+            </div>
+        </form>
+
+    
+
 <div class="row">
     <?php if ($barangList): ?>
         <?php foreach ($barangList as $barang): ?>
