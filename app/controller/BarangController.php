@@ -13,25 +13,31 @@ class BarangController {
         $this->barangModel = new BarangModel();
     }
 
+    // Menampilkan semua barang
     public function showAllBarang() {
         return $this->barangModel->getAllBarang();
     }
 
+    // Menampilkan barang berdasarkan jenis
     public function getBarangByJenis($jenis) {
         return $this->barangModel->getBarangByJenis($jenis);
     }
 
+    // Menambahkan barang
     public function addBarang($data, $userId) {
         return $this->barangModel->addBarang($data, $userId);
     }
 
+    // Mengupdate status barang
     public function updateBarang($id, $status) {
         return $this->barangModel->updateBarang($id, $status);
     }
 
+    // Menangani request untuk menambah barang atau menampilkan barang
     public function handleRequest() {
         session_start();
 
+        // Menangani proses penambahan barang melalui POST
         if (isset($_POST['add_barang'])) {
             $data = [
                 'nama' => $_POST['nama'],
@@ -75,10 +81,11 @@ class BarangController {
                 exit();
             }
 
+            // Mengecek apakah pengguna sudah login
             if (isset($_SESSION['user']['id'])) {
                 $userId = $_SESSION['user']['id'];
 
-                // Panggil fungsi untuk menambahkan barang ke database
+                // Menambahkan barang ke database
                 if ($this->addBarang($data, $userId)) {
                     header("Location: /tokobekas/app/view/barang_list.php");
                     exit();
@@ -105,15 +112,17 @@ class BarangController {
         return $barangList;
     }
 
+    // Menampilkan barang yang dijual oleh pengguna tertentu
     public function showUserBarang($userId) {
         return $this->barangModel->getBarangByUser($userId);
     }
 
+    // Menghapus barang berdasarkan ID
     public function deleteBarang($id) {
-        $barangModel = new BarangModel();
-        return $barangModel->deleteBarang($id);
+        return $this->barangModel->deleteBarang($id);
     }
 }
 
+// Memanggil controller untuk menangani request
 $barangController = new BarangController();
 $barangController->handleRequest();

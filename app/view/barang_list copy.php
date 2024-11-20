@@ -12,7 +12,7 @@ require_once '../controller/BarangController.php';
 use Controller\BarangController;
 
 $barangController = new BarangController();
-$barangList = $barangController->handleRequest();  // Menggunakan handleRequest() untuk menangani filter jenis
+$barangList = $barangController->showAllBarang();
 
 $user = $_SESSION['user'];
 ?>
@@ -24,12 +24,13 @@ $user = $_SESSION['user'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="icon" href="/tokobekas/public/images/logo-tokobekas.png" type="image/png">
+     <link rel="icon" href="/tokobekas/public/images/logo-tokobekas.png" type="image/png">
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/tokobekas/public/css/style.css">
     <link rel="stylesheet" href="/tokobekas/public/css/tiny-slider.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 
 <body>
@@ -60,67 +61,78 @@ $user = $_SESSION['user'];
             </div>
         </div>
     </nav>
+    
+    
 
-    <div class="container mt-5">
-        <h2 class="text-left mb-4">Daftar Barang Bekas</h2>
+<div class="container mt-5">
+    <h2 class="text-left mb-4">Daftar Barang Bekas</h2>
 
-        <!-- Filter berdasarkan jenis -->
+            <!-- Filter berdasarkan jenis -->
         <form method="get" class="mb-4">
             <div class="row">
                 <div class="col-md-4">
-                    <select class="form-control" name="jenis">
+                    <select class="form-control" name="jenis" onchange="this.form.submit()">
                         <option value="">Pilih Jenis Barang</option>
                         <option value="Elektronik" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Elektronik' ? 'selected' : '' ?>>Elektronik</option>
-                        <option value="Furnitur" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Furnitur' ? 'selected' : '' ?>>Furnitur</option>
+                        <option value="Furniture" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Furniture' ? 'selected' : '' ?>>Furniture</option>
                         <option value="Pakaian" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Pakaian' ? 'selected' : '' ?>>Pakaian</option>
-                        <option value="Sepatu" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Sepatu' ? 'selected' : '' ?>>Sepatu</option>
-                        <option value="Tas" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Tas' ? 'selected' : '' ?>>Tas</option>
-                        <option value="Peralatan Rumah Tangga" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Peralatan Rumah Tangga' ? 'selected' : '' ?>>Peralatan Rumah Tangga</option>
-                        <option value="Mainan" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Mainan' ? 'selected' : '' ?>>Mainan</option>
-                        <option value="Buku" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Buku' ? 'selected' : '' ?>>Buku</option>
-                        <option value="Kendaraan" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Kendaraan' ? 'selected' : '' ?>>Kendaraan</option>
-                        <option value="Alat Olahraga" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Alat Olahraga' ? 'selected' : '' ?>>Alat Olahraga</option>
-                        <option value="Komputer & Aksesoris" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Komputer & Aksesoris' ? 'selected' : '' ?>>Komputer & Aksesoris</option>
-                        <option value="Peralatan Dapur" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Peralatan Dapur' ? 'selected' : '' ?>>Peralatan Dapur</option>
-                        <option value="Alat Musik" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Alat Musik' ? 'selected' : '' ?>>Alat Musik</option>
-                        <option value="Lainnya" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Lainnya' ? 'selected' : '' ?>>Lainnya</option>
                     </select>
-                </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-primary">Cari</button>
                 </div>
             </div>
         </form>
 
-        <div class="row">
-            <?php if ($barangList): ?>
-                <?php foreach ($barangList as $barang): ?>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-12">
-                        <div class="card" style="width: 100%;">
-                            <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top img-fluid custom-img shadow-sm" alt="Gambar Barang">
-                            <div class="card-body shadow-md">
-                                <h5 class="card-title"><?= htmlspecialchars($barang['nama']); ?></h5>
-                                <h6 class="card-subtitle text-body-secondary"><?= htmlspecialchars($barang['jenis']); ?> - <?= htmlspecialchars($barang['kondisi']); ?></h6>
-                                <p class="card-text">
-                                    <strong>Harga:</strong> <span class="badge bg-dark">Rp <?= htmlspecialchars(number_format($barang['harga'], 2, ',', '.')); ?></span>
-                                    <strong>Status:</strong> <span class="badge bg-<?= $barang['status'] === 'tersedia' ? 'success' : 'danger'; ?>"><?= htmlspecialchars($barang['status']); ?></span>
-                                    <br>
-                                    <strong>Nomor Penjual:</strong> <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>" target="_blank" class="text-decoration-none"><?= htmlspecialchars($barang['nomor_penjual']); ?></a><br>
-                                    <strong>Deskripsi:</strong> <?= htmlspecialchars($barang['deskripsi']); ?>
-                                </p>
-                                <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>?text=Halo,%20saya%20tertarik%20dengan%20barang%20Anda:%20<?= urlencode($barang['nama']); ?>" class="btn btn-primary btn-sm d-flex align-items-center btn-small" target="_blank">
-                                    <i class="fab fa-whatsapp me-2"></i> Hubungi Penjual
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-            <?php else: ?>
-                <p class="text-center">Tidak ada barang yang tersedia</p>
-            <?php endif; ?>
-        </div>
-    </div>
+    
 
+<div class="row">
+    <?php if ($barangList): ?>
+        <?php foreach ($barangList as $barang): ?>
+                <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                    <div class="card" style="width: 100%;">
+                    <img src="/fotobarang/<?= htmlspecialchars($barang['gambar']); ?>" class="card-img-top img-fluid custom-img shadow-sm" alt="Gambar Barang">
+
+                        <div class="card-body shadow-md">
+                            <h5 class="card-title"><?= htmlspecialchars($barang['nama']); ?>
+                            </h5>
+
+                            <h6 class="card-subtitle text-body-secondary"><?= htmlspecialchars($barang['jenis']); ?> - <?= htmlspecialchars($barang['kondisi']); ?>
+                            </h6>
+
+                            <p class="card-text">
+                                <strong>Harga:</strong> 
+                                <span class="badge bg-dark">
+                                    Rp <?= htmlspecialchars(number_format($barang['harga'], 2, ',', '.')); ?>
+                                </span>
+                                <strong>Status:</strong> 
+                                <span class="badge bg-<?= $barang['status'] === 'tersedia' ? 'success' : 'danger'; ?>">
+                                    <?= htmlspecialchars($barang['status']); ?>
+                                </span>
+                                <br>
+                                <strong>Nomor Penjual:</strong> 
+                                <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>" target="_blank" class="text-decoration-none">
+                                    <?= htmlspecialchars($barang['nomor_penjual']); ?>
+                                </a><br>
+                                <strong>Deskripsi:</strong> <?= htmlspecialchars($barang['deskripsi']); ?>
+                            </p>
+                            <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>?text=Halo,%20saya%20tertarik%20dengan%20barang%20Anda:%20<?= urlencode($barang['nama']); ?>" 
+                            class="btn btn-primary btn-sm d-flex align-items-center btn-small" target="_blank">
+                                <i class="fab fa-whatsapp me-2"></i> Hubungi Penjual
+                            </a>
+
+                        </div>
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php else: ?>
+        <p class="text-center">Tidak ada barang yang tersedia</p>
+    <?php endif; ?>
+</div>
+
+
+
+</div>
+
+
+    <!-- Start Footer -->
 <footer class="footer-section">
     <div class="container relative">
         <div class="row g-3"> <!-- Mengurangi jarak antar kolom -->
@@ -163,6 +175,7 @@ $user = $_SESSION['user'];
         </div>
     </div>
 </footer>
+    <!-- End Footer -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="/tokobekas/public/js/bootstrap.bundle.min.js"></script>
