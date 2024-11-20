@@ -70,5 +70,19 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        function lihatPassword() {
+            const passwordField = document.getElementById('password');
+            const eyeIcon = document.querySelector('.eye-icon');
+
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.innerHTML = '👁️';
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.innerHTML = '👁️';
+            }
+        }
+    </script>
 </body>
 </html>

@@ -1133,3 +1133,9 @@ textarea {
   height: 300px;
   object-fit: cover;
 } */
+
+.form-control.is-valid {
+  border-color: #28a745;
+  background-image: none;
+  /* Menghilangkan ikon centang hijau */
+}

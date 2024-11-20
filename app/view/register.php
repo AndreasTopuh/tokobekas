@@ -34,6 +34,7 @@
         }
         .form-control.is-valid {
             border-color: #28a745;
+            background-image: none; /* Menghilangkan ikon centang hijau */
         }
         .invalid-feedback {
             display: block;
@@ -95,19 +96,6 @@
 
     <script>
         // Fungsi untuk toggle password visibility
-        // function togglePassword() {
-        //     const passwordField = document.getElementById("password");
-        //     const passwordIcon = document.getElementById("togglePassword");
-
-        //     // Cek tipe password field dan ubah antara 'password' dan 'text'
-        //     if (passwordField.type === "password") {
-        //         passwordField.type = "text";
-        //         passwordIcon.textContent = "🙈"; // Ganti ikon menjadi mata tertutup
-        //     } else {
-        //         passwordField.type = "password";
-        //         passwordIcon.textContent = "👁️"; // Ganti ikon menjadi mata terbuka
-        //     }
-        // }
         function lihatPassword() {
             var x = document.getElementById("password");
             if (x.type === "password") {
