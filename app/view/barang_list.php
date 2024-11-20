@@ -86,12 +86,13 @@ $user = $_SESSION['user'];
                         <option value="Lainnya" <?= isset($_GET['jenis']) && $_GET['jenis'] == 'Lainnya' ? 'selected' : '' ?>>Lainnya</option>
                     </select>
                 </div>
-                <div class="col-md-2">
-                    <button type="submit" class="btn btn-primary">Cari</button>
-                    <button type="submit" class="btn btn-secondary">Tampilkan Semua Barang</button>
+                <div class="col-md-4 d-flex align-items-center">
+                    <button type="submit" class="btn btn-primary me-2">Cari</button>
+                    <a href="barang_list.php" class="btn btn-secondary">Tampilkan Semua Barang</a>
                 </div>
             </div>
         </form>
+
 
         <!-- Tombol untuk menampilkan semua barang
         <form method="get" class="mb-4">
