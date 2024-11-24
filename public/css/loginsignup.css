@@ -13,7 +13,7 @@ body {
     padding: 20px;
     max-width: 500px;
     margin: auto;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(2px);
     /* Menambahkan efek blur untuk kesan elegan */
 }
 
