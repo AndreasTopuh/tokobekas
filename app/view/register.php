@@ -19,10 +19,10 @@
                 
                 <!-- Greeting and Title -->
                 <h1 class="text-center mb-3">Join Our Community</h1>
-                <p class="text-center text-muted mb-4">Create an account and start exploring amazing deals today.</p>
+                <p class="text-center text mb-4">Create an account and start exploring amazing deals today.</p>
                 
                 <!-- Register Form -->
-                <form method="POST" action="/tokobekas/" onsubmit="return validateForm()">
+                <form method="POST" action="/tokobekas/" onsubmit="return validateForm()" class="p-2">
                     <div class="mb-3">
                         <input type="text" name="nama" class="form-control" placeholder="Full Name" required>
                     </div>

@@ -19,10 +19,10 @@
                 
                 <!-- Greeting and Title -->
                 <h1 class="text-center mb-3">Welcome Back!</h1>
-                <p class="text-center text-muted mb-4">Sign in to continue exploring great deals on pre-loved items.</p>
+                <p class="text-center text mb-4">Sign in to continue exploring great deals on pre-loved items.</p>
 
                 <!-- Login Form -->
-                <form method="POST" action="/tokobekas/index.php">
+                <form method="POST" action="/tokobekas/index.php" class="p-2">
                     <div class="mb-3">
                         <input type="email" name="email" class="form-control" placeholder="Your Email" required>
                     </div>
