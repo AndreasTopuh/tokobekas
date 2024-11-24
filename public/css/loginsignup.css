@@ -1,83 +1,94 @@
 body {
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../images/background1.jpg");
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../images/background1.jpg");
     background-size: cover;
     background-position: center;
-    backdrop-filter: blur(5px);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
 }
 
-.login-container {
-    background-color: rgba(0, 0, 0, 0.6);
-    /* Transparansi hitam */
-    color: white;
-    /* Warna teks agar kontras dengan latar belakang */
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    /* Bayangan lebih dramatis */
-    padding: 30px;
-    max-width: 400px;
-    margin: auto;
-    backdrop-filter: blur(10px);
-    /* Efek blur lebih kuat */
-}
-
+.login-container,
 .register-container {
     background-color: rgba(0, 0, 0, 0.6);
-    /* Transparansi hitam */
-    color: white;
-    /* Warna teks agar kontras dengan latar belakang */
-    border-radius: 15px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    /* Bayangan lebih dramatis */
+    /* Transparansi gelap */
+    border-radius: 20px;
+    /* Sudut membulat lebih besar */
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+    /* Bayangan tegas */
     padding: 30px;
     max-width: 400px;
-    margin: auto;
+    width: 90%;
+    color: white;
     backdrop-filter: blur(10px);
-    /* Efek blur lebih kuat */
+    /* Efek blur */
 }
-.logo {
+
+h1 {
+    font-size: 24px;
     text-align: center;
     margin-bottom: 20px;
 }
 
-.error,
-.success {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.form-check-label {
-    margin-left: 10px;
-}
-
-
-
-.logo {
-    text-align: center;
+p {
+    font-size: 14px;
+    color: #dfe6e9;
+    /* Warna teks abu-abu terang */
     margin-bottom: 20px;
-}
-
-.error,
-.success {
     text-align: center;
-    margin-top: 10px;
 }
 
-.form-control.is-invalid {
-    border-color: #dc3545;
+p a {
+    color: #00cec9;
+    /* Warna hijau terang untuk link */
+    text-decoration: none;
 }
 
-.form-control.is-valid {
-    border-color: #28a745;
-    background-image: none;
-    /* Menghilangkan ikon centang hijau */
+p a:hover {
+    text-decoration: underline;
 }
 
-.invalid-feedback {
-    display: block;
+input[type="text"],
+input[type="password"],
+input[type="email"] {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    /* Transparansi input */
+    color: white;
+    /* Warna teks */
+    font-size: 14px;
 }
 
-.password-field {
-    position: relative;
+input[type="text"]::placeholder,
+input[type="password"]::placeholder,
+input[type="email"]::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+    /* Placeholder transparan */
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    margin: 20px 0;
+    background-color: #00b894;
+    /* Hijau terang */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #019875;
+    /* Hijau lebih gelap */
 }
 
 .eye-icon {
@@ -86,4 +97,22 @@ body {
     right: 10px;
     transform: translateY(-50%);
     cursor: pointer;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.form-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.avatar {
+    display: block;
+    margin: 0 auto;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border: 3px solid #00cec9;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
