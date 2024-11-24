@@ -15,7 +15,7 @@
         <div class="row justify-content-center align-items-center vh-100 p-4">
             <div class="col-lg-6 col-md-8 col-sm-10 register-container">
                 <!-- Logo -->
-                <img src="/tokobekas/public/images/logo-tokobekas.png" alt="Logo Toko Bekas" class="img-fluid mb-4" style="max-width: 150px; display: block; margin: 0 auto;">
+                <img src="/tokobekas/public/images/logo-tokobekas.png" alt="Logo Toko Bekas" class="img-fluid mt-2 mb-2" style="max-width: 150px; display: block; margin: 0 auto;">
                 
                 <!-- Greeting and Title -->
                 <h1 class="text-center mb-2">Join Our Community</h1>
