@@ -112,7 +112,7 @@ $user = $_SESSION['user'];
 
             <div class="mb-3">
                 <label for="deskripsi" class="form-label"><strong>Deskripsi</strong></label>
-                <textarea name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsikan barang Anda" rows="4"></textarea>
+                <textarea name="deskripsi" id="deskripsi" class="form-control" placeholder="Deskripsikan barang Anda" rows="4" required></textarea>
             </div>
 
             <!-- Input untuk upload gambar -->

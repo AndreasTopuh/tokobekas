@@ -18,16 +18,18 @@
                 <img src="/tokobekas/public/images/logo-tokobekas.png" alt="Logo Toko Bekas" class="img-fluid mb-4" style="max-width: 150px; display: block; margin: 0 auto;">
                 
                 <!-- Greeting and Title -->
-                <h1 class="text-center mb-3">Welcome Back!</h1>
-                <p class="text-center text mb-4">Sign in to continue exploring great deals on pre-loved items.</p>
+                <h1 class="text-center mb-2">Welcome Back!</h1>
+                <p class="text-center text mb-3">Sign in to continue exploring great deals on pre-loved items.</p>
 
                 <!-- Login Form -->
                 <form method="POST" action="/tokobekas/index.php" class="p-2">
                     <div class="mb-3">
-                        <input type="email" name="email" class="form-control" placeholder="Your Email" required>
+                        <p class="text-start">Email</p>
+                        <input type="email" name="email" class="form-control" placeholder="Endter Your Email" required>
                     </div>
                     <div class="mb-3">
-                        <input type="password" name="password" class="form-control" placeholder="Your Password" required id="password">
+                        <p class="text-start">Password</p>
+                        <input type="password" name="password" class="form-control" placeholder="Enter Your Password" required id="password">
                     </div>
 
                     <!-- Show Password -->
