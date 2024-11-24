@@ -62,7 +62,7 @@ $user = $_SESSION['user'];
 		<div class="container">
 			<div class="row justify-content-between">
 				<div class="col-lg-5 pt-3">
-					<div class="intro-excerpt">
+					<div class="intro-excerpt pt-2">
 						<h1>Barang Bekas Terbaik Dengan Harga Terjangkau</h2></h1>
 						<p class="mb-4">Kami menyediakan berbagai macam barang bekas berkualitas dengan harga yang lebih hemat. Temukan barang impian Anda sekarang!</p>
 						<p><a href="barang_list.php" class="btn btn-secondary me-2">Lihat Barang</a></p>
@@ -393,10 +393,10 @@ $user = $_SESSION['user'];
                     Dengan Tokobekas, Anda bisa menjual barang bekas yang tidak terpakai dan mendapatkan uang tambahan. Platform kami menghubungkan Anda langsung dengan pembeli tanpa perantara. Jual beli barang bekas kini jadi lebih mudah dan aman.
                 </p>
                 <ul class="list-unstyled custom-social" style="font-size: 0.8rem;"> <!-- Mengurangi ukuran font pada ikon -->
-                    <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-                    <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-                    <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-                    <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    <!-- <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li> -->
+                    <!-- <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li> -->
+                    <li><a href="#https://www.instagram.com/andreasjft_?igsh=MXFudGZoMWpxdHA3aw%3D%3D&utm_source=qr"><span class="fa fa-brands fa-instagram"></span></a></li>
+                    <!-- <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li> -->
                 </ul>
             </div>
 
