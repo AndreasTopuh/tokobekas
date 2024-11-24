@@ -1,76 +1,75 @@
 body {
     background: linear-gradient(rgba(59, 93, 80, 0.8), rgba(59, 93, 80, 0.8)), url("../images/background1.jpg");
     background-size: cover;
+    background-position: center;
     backdrop-filter: blur(5px);
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
 }
 
 .login-container,
 .register-container {
-/* From https://css.glass */
     background: rgba(255, 255, 255, 0.09);
+    /* Transparansi */
     border-radius: 16px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 20px;
+    padding: 30px;
+    /* Tambahkan padding agar elemen tidak terlalu mepet */
     max-width: 500px;
     margin: auto;
 }
 
-/* .login-container,
-.register-container {
-    background-color: rgba(5, 78, 0, 0.6);
-    border-radius: 20px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-    padding: 30px;
-    max-width: 400px;
-    width: 90%;
-    color: white;
-    backdrop-filter: blur(10px);
-} */
-
 h1 {
-    font-size: 24px;
+    font-size: 26px;
     text-align: center;
-    margin-bottom: 20px;
-}
-
-h1,
-p , label{
+    margin-bottom: 15px;
+    /* Jarak lebih kecil */
     color: white;
 }
 
 p {
     font-size: 14px;
     color: #dfe6e9;
-    /* Warna teks abu-abu terang */
-    margin-bottom: 20px;
+    /* Abu-abu terang */
+    margin-bottom: 15px;
     text-align: center;
 }
 
 p a {
     color: #00cec9;
-    /* Warna hijau terang untuk link */
+    /* Hijau terang */
     text-decoration: none;
+    font-weight: bold;
 }
 
 p a:hover {
     text-decoration: underline;
 }
 
+label {
+    color: white;
+    font-size: 14px;
+    margin-bottom: 5px;
+    display: block;
+}
+
 input[type="text"],
 input[type="password"],
 input[type="email"] {
     width: 100%;
-    padding: 12px;
-    margin: 10px 0;
+    padding: 12px 16px;
+    /* Spasi dalam */
+    margin-bottom: 15px;
+    /* Jarak antar elemen */
     border: none;
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.2);
-    /* Transparansi input */
-    color: rgb(255, 255, 255);
-    /* Warna teks */
+    /* Transparansi */
+    color: white;
     font-size: 14px;
 }
 
@@ -78,13 +77,15 @@ input[type="text"]::placeholder,
 input[type="password"]::placeholder,
 input[type="email"]::placeholder {
     color: rgba(255, 255, 255, 0.7);
-    /* Placeholder transparan */
+    /* Placeholder lebih terang */
 }
 
 button {
     width: 100%;
-    padding: 12px;
-    margin: 20px 0;
+    padding: 12px 0;
+    /* Tinggi tombol */
+    margin-top: 10px;
+    /* Jarak di atas tombol */
     background-color: #00b894;
     /* Hijau terang */
     border: none;
@@ -108,21 +109,50 @@ button:hover {
     transform: translateY(-50%);
     cursor: pointer;
     color: rgba(255, 255, 255, 0.7);
+    /* Warna ikon */
 }
 
 .form-group {
     position: relative;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    /* Spasi antar grup */
 }
 
 .avatar {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto 20px;
+    /* Spasi bawah setelah avatar */
     border-radius: 50%;
     width: 80px;
     height: 80px;
     object-fit: cover;
     border: 3px solid #00cec9;
-    margin-bottom: 15px;
+    /* Warna border avatar */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    /* Padding untuk ruang di sisi layar */
+    box-sizing: border-box;
+}
+
+.error {
+    font-size: 14px;
+    color: #e74c3c;
+    /* Warna merah */
+    text-align: center;
+    margin-top: 10px;
+}
+
+.success {
+    font-size: 14px;
+    color: #2ecc71;
+    /* Warna hijau terang */
+    text-align: center;
+    margin-top: 10px;
 }
