@@ -18,25 +18,28 @@
                 <img src="/tokobekas/public/images/logo-tokobekas.png" alt="Logo Toko Bekas" class="img-fluid mb-4" style="max-width: 150px; display: block; margin: 0 auto;">
                 
                 <!-- Greeting and Title -->
-                <h1 class="text-center mb-3">Join Our Community</h1>
-                <p class="text-center text mb-4">Create an account and start exploring amazing deals today.</p>
+                <h1 class="text-center mb-2">Join Our Community</h1>
+                <p class="text-center text mb-2">Create an account and start exploring amazing deals today.</p>
                 
                 <!-- Register Form -->
                 <form method="POST" action="/tokobekas/" onsubmit="return validateForm()" class="p-2">
                     <div class="mb-3">
+                        <p class="text-start">Your Name</p>
                         <input type="text" name="nama" class="form-control" placeholder="Full Name" required>
                     </div>
                     <div class="mb-3">
+                        <p class="text-start">Email</p>
                         <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
                         <div id="emailError" class="invalid-feedback" style="display: none;">Email must end with @gmail.com.</div>
                     </div>
                     <div class="mb-3">
+                        <p class="text-start">Password</p>
                         <input type="password" name="password" class="form-control" id="password" placeholder="Your Password" required>
                         <div id="passwordError" class="invalid-feedback" style="display: none;">Password must be at least 5 characters and contain a number.</div>
                     </div>
 
                     <!-- Show Password -->
-                    <div class="mb-3 form-check">
+                    <div class="mb-2 form-check">
                         <input type="checkbox" onclick="lihatPassword()" class="form-check-input" id="showPassword">
                         <label class="form-check-label" for="showPassword">Show Password</label>
                     </div>
@@ -57,7 +60,7 @@
                 <?php endif; ?>
 
                 <!-- Login Link -->
-                <p class="text-center mt-4">Already have an account? <a href="/tokobekas/app/view/login.php">Login here</a>.</p>
+                <p class="text-center mt-2">Already have an account? <a href="/tokobekas/app/view/login.php">Login here</a>.</p>
             </div>
         </div>
     </div>

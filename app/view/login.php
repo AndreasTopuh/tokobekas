@@ -19,7 +19,7 @@
                 
                 <!-- Greeting and Title -->
                 <h1 class="text-center mb-2">Welcome Back!</h1>
-                <p class="text-center text mb-3">Sign in to continue exploring great deals on pre-loved items.</p>
+                <p class="text-center text mb-2">Sign in to continue exploring great deals on pre-loved items.</p>
 
                 <!-- Login Form -->
                 <form method="POST" action="/tokobekas/index.php" class="p-2">
@@ -54,7 +54,7 @@
                 <?php endif; ?>
 
                 <!-- Register Link -->
-                <p class="text-center mt-4">Don't have an account yet? <a href="/tokobekas/app/view/register.php">Create one here</a>.</p>
+                <p class="text-center mt-2">Don't have an account yet? <a href="/tokobekas/app/view/register.php">Create one here</a>.</p>
             </div>
         </div>
     </div>
