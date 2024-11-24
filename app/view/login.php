@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/tokobekas/public/css/loginsignup.css">
 </head>
 <body>
-    <div class="container-fluid">
+    <div class="container-flui">
         <div class="row justify-content-center align-items-center vh-100 p-2">
             <div class="col-lg-6 col-md-8 col-sm-10 login-container">
                 <!-- Logo -->
