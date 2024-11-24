@@ -1,128 +1,79 @@
-/* Global Styles */
 body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
     background-color: #3b5d50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    color: #fff;
+    /* Sesuaikan background dengan Register */
 }
 
-/* Container Styles */
-.container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    max-width: 500px;
-}
-
-/* Card Styles */
-.login-card {
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-    width: 100%;
-}
-
-/* Image Container */
-.image-container {
-    height: 150px;
-    background: #3b5d50;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.image-container img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-
-/* Form Container */
-.form-container {
+.login-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.logo {
     text-align: center;
-    color: #333;
-}
-
-.form-container h2 {
     margin-bottom: 20px;
-    font-size: 24px;
-    color: #3b5d50;
 }
 
-/* Input Group */
-.input-group {
-    margin-bottom: 15px;
-    text-align: left;
+.error,
+.success {
+    text-align: center;
+    margin-top: 10px;
 }
 
-.input-group label {
+.form-check-label {
+    margin-left: 10px;
+}
+
+body {
+    background-color: #3b5d50;
+    /* Sesuaikan background dengan Login */
+}
+
+.register-container {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 500px;
+    margin: auto;
+}
+
+.logo {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.error,
+.success {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.form-control.is-invalid {
+    border-color: #dc3545;
+}
+
+.form-control.is-valid {
+    border-color: #28a745;
+    background-image: none;
+    /* Menghilangkan ikon centang hijau */
+}
+
+.invalid-feedback {
     display: block;
-    margin-bottom: 5px;
-    font-weight: 600;
 }
 
-.input-group input {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 14px;
-    outline: none;
-}
-
-.input-group input:focus {
-    border-color: #3b5d50;
-    box-shadow: 0 0 5px rgba(59, 93, 80, 0.5);
-}
-
-/* Password Toggle */
-.password-group {
+.password-field {
     position: relative;
 }
 
-.toggle-password {
+.eye-icon {
     position: absolute;
-    right: 10px;
     top: 50%;
+    right: 10px;
     transform: translateY(-50%);
     cursor: pointer;
-}
-
-/* Button */
-.btn {
-    width: 100%;
-    padding: 10px;
-    background: #3b5d50;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.btn:hover {
-    background: #2f4a43;
-}
-
-/* Forgot Password */
-.forgot-password {
-    margin-top: 15px;
-    font-size: 14px;
-}
-
-.forgot-password a {
-    color: #3b5d50;
-    text-decoration: none;
-}
-
-.forgot-password a:hover {
-    text-decoration: underline;
 }

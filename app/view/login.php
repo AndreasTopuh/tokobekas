@@ -6,161 +6,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="icon" href="/tokobekas/public/images/logo-tokobekas.png" type="image/png">
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/tokobekas/public/css/loginsignup.css">
-    <style>
-        /* Global Styles */
-        body {
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #3b5d50;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            color: #fff;
-        }
 
-        /* Container Styles */
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            max-width: 500px;
-        }
-
-        /* Card Styles */
-        .login-card {
-            background: white;
-            border-radius: 15px;
-            overflow: hidden;
-            box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
-            width: 100%;
-        }
-
-        /* Image Container */
-        .image-container {
-            height: 150px;
-            background: #3b5d50;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .image-container img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-        }
-
-        /* Form Container */
-        .form-container {
-            padding: 20px;
-            text-align: center;
-            color: #333;
-        }
-
-        .form-container h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #3b5d50;
-        }
-
-        /* Input Group */
-        .input-group {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-
-        .input-group label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: 600;
-        }
-
-        .input-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-size: 14px;
-            outline: none;
-        }
-
-        .input-group input:focus {
-            border-color: #3b5d50;
-            box-shadow: 0 0 5px rgba(59, 93, 80, 0.5);
-        }
-
-        /* Password Toggle */
-        .password-group {
-            position: relative;
-        }
-
-        .toggle-password {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        /* Button */
-        .btn {
-            width: 100%;
-            padding: 10px;
-            background: #3b5d50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .btn:hover {
-            background: #2f4a43;
-        }
-
-        /* Forgot Password */
-        .forgot-password {
-            margin-top: 15px;
-            font-size: 14px;
-        }
-
-        .forgot-password a {
-            color: #3b5d50;
-            text-decoration: none;
-        }
-
-        .forgot-password a:hover {
-            text-decoration: underline;
-        }
-    </style>
 </head>
 <body>
-    <div class="container">
-        <div class="login-card">
-            <div class="image-container">
-                <img src="/tokobekas/public/images/logo-tokobekas.png" alt="Logo Toko Bekas" class="background-image">
-            </div>
-            <div class="form-container">
-                <h2>Log in</h2>
-                <form method="POST" action="/tokobekas/index.php">
-                    <div class="input-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                    </div>
-                    <div class="input-group password-group">
-                        <label for="password">Password</label>
-                        <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                        <span class="toggle-password" onclick="togglePassword()">👁️</span>
-                    </div>
-                    <button type="submit" name="login" class="btn">Continue</button>
-                </form>
-                <p class="forgot-password"><a href="#">Forgot your password?</a></p>
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center vh-100 p-4">
+            <div class="col-lg-6 col-md-8 col-sm-10 login-container">
+                <!-- Logo Toko Bekas -->
+                <img src="/tokobekas/public/images/logo-tokobekas.png" alt="Logo Toko Bekas" class="img-fluid mb-4" style="max-width: 150px; display: block; margin: 0 auto;">
                 
+                <!-- Judul Halaman Login -->
+                <h2 class="text-center mb-4">Login</h2>
+
+                <!-- Form Login -->
+                <form method="POST" action="/tokobekas/index.php">
+                    <div class="mb-3">
+                        <input type="email" name="email" class="form-control" placeholder="Email" required>
+                    </div>
+                    <div class="mb-3">
+                        <input type="password" name="password" class="form-control" placeholder="Password" required id="password">
+                    </div>
+
+                    <!-- Show Password Checkbox -->
+                    <div class="mb-3 form-check">
+                        <input type="checkbox" onclick="lihatPassword()" class="form-check-input" id="showPassword">
+                        <label class="form-check-label" for="showPassword">Show Password</label>
+                    </div>
+
+                    <button type="submit" name="login" class="btn btn-success w-100">Login</button>
+                </form>
+
                 <!-- Menampilkan pesan error dan sukses -->
                 <?php if (isset($_SESSION['error'])): ?>
                     <p class="error text-danger"><?= htmlspecialchars($_SESSION['error']); ?></p>
@@ -172,18 +51,24 @@
                     <?php unset($_SESSION['success']); ?>
                 <?php endif; ?>
 
-                <p class="text-center mt-3">Belum punya akun? <a href="/tokobekas/app/view/register.php">Daftar di sini</a>.</p>
+                <!-- Link untuk halaman register jika belum punya akun -->
+                <p class="text-center mt-3">Jika Anda belum terdaftar, silakan <a href="/tokobekas/app/view/register.php">daftar di sini</a>.</p>
             </div>
         </div>
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Toggle Password Visibility
-        function togglePassword() {
-            const passwordInput = document.getElementById('password');
-            if (passwordInput.type === 'password') {
-                passwordInput.type = 'text';
+        // Fungsi untuk toggle password visibility
+        function lihatPassword() {
+            var x = document.getElementById("password");
+            var showPasswordCheckbox = document.getElementById("showPassword");
+
+            // Toggle password visibility
+            if (showPasswordCheckbox.checked) {
+                x.type = "text";
             } else {
-                passwordInput.type = 'password';
+                x.type = "password";
             }
         }
     </script>
