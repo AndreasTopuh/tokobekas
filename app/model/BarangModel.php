@@ -79,5 +79,5 @@ class BarangModel {
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':id', $id, PDO::PARAM_INT);
         return $stmt->execute();
-    }
+    } 
 }
