@@ -40,7 +40,7 @@ p {
 }
 
 p a {
-    color: #006302;
+    color: #afafaf;
     /* Warna hijau terang untuk link */
     text-decoration: none;
 }
@@ -73,7 +73,7 @@ input[type="email"]::placeholder {
 
 button {
     width: 100%;
-    padding: 12px;
+    padding: 5px;
     margin: 20px 0;
     background-color: #00b894;
     /* Hijau terang */
