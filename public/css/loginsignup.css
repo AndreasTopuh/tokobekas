@@ -36,6 +36,11 @@ h1 {
     margin-bottom: 20px;
 }
 
+h1,
+p , label{
+    color: white;
+}
+
 p {
     font-size: 14px;
     color: #dfe6e9;
@@ -64,7 +69,7 @@ input[type="email"] {
     border-radius: 8px;
     background-color: rgba(255, 255, 255, 0.2);
     /* Transparansi input */
-    color: white;
+    color: rgb(255, 255, 255);
     /* Warna teks */
     font-size: 14px;
 }
