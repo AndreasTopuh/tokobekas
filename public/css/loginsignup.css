@@ -17,9 +17,9 @@ body {
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.3);
-    padding: 30px;
+    /* padding: 30px; */
     /* Tambahkan padding agar elemen tidak terlalu mepet */
-    max-width: 500px;
+    /* max-width: 500px; */
     margin: auto;
 }
 
