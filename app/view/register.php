@@ -11,47 +11,6 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/tokobekas/public/css/loginsignup.css">
 
-    <!-- <style>
-        body {
-            background-color: #3b5d50; /* Sesuaikan background dengan Login */
-        }
-        .register-container {
-            background-color: white;
-            border-radius: 10px;
-            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            max-width: 500px;
-            margin: auto;
-        }
-        .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        .error, .success {
-            text-align: center;
-            margin-top: 10px;
-        }
-        .form-control.is-invalid {
-            border-color: #dc3545;
-        }
-        .form-control.is-valid {
-            border-color: #28a745;
-            background-image: none; /* Menghilangkan ikon centang hijau */
-        }
-        .invalid-feedback {
-            display: block;
-        }
-        .password-field {
-            position: relative;
-        }
-        .eye-icon {
-            position: absolute;
-            top: 50%;
-            right: 10px;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-    </style> -->
 </head>
 <body>
     <div class="container-fluid">
