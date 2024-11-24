@@ -27,8 +27,8 @@ h1 {
 }
 
 h1,
-p , label{
-    color: white;
+label{
+    color: rgb(255, 255, 255);
 }
 
 p {
@@ -40,7 +40,7 @@ p {
 }
 
 p a {
-    color: #00cec9;
+    color: #006302;
     /* Warna hijau terang untuk link */
     text-decoration: none;
 }
