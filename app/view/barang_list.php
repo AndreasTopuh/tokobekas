@@ -143,22 +143,13 @@ $user = $_SESSION['user'];
                     Dengan Tokobekas, Anda bisa menjual barang bekas yang tidak terpakai dan mendapatkan uang tambahan. Platform kami menghubungkan Anda langsung dengan pembeli tanpa perantara. Jual beli barang bekas kini jadi lebih mudah dan aman.
                 </p>
                 <ul class="list-unstyled custom-social" style="font-size: 0.8rem;"> <!-- Mengurangi ukuran font pada ikon -->
-                    <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li>
-                    <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li>
-                    <li><a href="#"><span class="fa fa-brands fa-instagram"></span></a></li>
-                    <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li>
+                    <!-- <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li> -->
+                    <!-- <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li> -->
+                    <li><a href="https://www.instagram.com/andreasjft_?igsh=MXFudGZoMWpxdHA3aw%3D%3D&utm_source=qr" target="_blank"><span class="fa fa-brands fa-instagram"></span></a></li>
+                    <!-- <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li> -->
                 </ul>
             </div>
 
-            <div class="col-lg-8">
-                <div class="row links-wrap">
-                    <div class="col-6 col-sm-6 col-md-3">
-                        <ul class="list-unstyled">
-                            <li><a href="#" style="font-size: 0.875rem;">About Us</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <div class="border-top copyright">

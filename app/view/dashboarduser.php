@@ -395,7 +395,7 @@ $user = $_SESSION['user'];
                 <ul class="list-unstyled custom-social" style="font-size: 0.8rem;"> <!-- Mengurangi ukuran font pada ikon -->
                     <!-- <li><a href="#"><span class="fa fa-brands fa-facebook-f"></span></a></li> -->
                     <!-- <li><a href="#"><span class="fa fa-brands fa-twitter"></span></a></li> -->
-                    <li><a href="https://www.instagram.com/andreasjft_?igsh=MXFudGZoMWpxdHA3aw%3D%3D&utm_source=qr"><span class="fa fa-brands fa-instagram"></span></a></li>
+                    <li><a href="https://www.instagram.com/andreasjft_?igsh=MXFudGZoMWpxdHA3aw%3D%3D&utm_source=qr" target="_blank"><span class="fa fa-brands fa-instagram"></span></a></li>
                     <!-- <li><a href="#"><span class="fa fa-brands fa-linkedin"></span></a></li> -->
                 </ul>
             </div>
