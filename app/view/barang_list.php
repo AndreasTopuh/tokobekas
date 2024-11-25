@@ -35,7 +35,7 @@ $user = $_SESSION['user'];
 <body>
     <nav class="custom-navbar navbar navbar-expand-md navbar-dark bg-dark" aria-label="Furni navigation bar">
         <div class="container">
-            <a class="navbar-brand" href="./dashboarduser.php">Tokobekas<span>.</span></a>
+            <a class="navbar-brand" href="./dashboarduser.php">Jerrico Jhenkins<span>.</span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni"
                 aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -113,7 +113,8 @@ $user = $_SESSION['user'];
                                     <strong>Deskripsi:</strong> <?= htmlspecialchars($barang['deskripsi']); ?>
                                 </p>
                                 <a href="https://wa.me/<?= urlencode($barang['nomor_penjual']); ?>?text=Halo,%20saya%20tertarik%20dengan%20barang%20Anda:%20<?= urlencode($barang['nama']); ?>" class="btn btn-primary btn-sm d-flex align-items-center btn-small" target="_blank">
-                                    <i class="fab fa-whatsapp me-2"></i> Hubungi Penjual
+                                    
+                                <i class="fab fa-whatsapp me-2"></i> Hubungi Penjual
                                 </a>
                             </div>
                         </div>
