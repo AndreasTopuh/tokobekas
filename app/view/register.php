@@ -30,12 +30,12 @@
                     <div class="mb-3">
                         <p class="text-start">Email</p>
                         <input type="email" name="email" class="form-control" id="email" placeholder="Your Email" required>
-                        <div id="emailError" class="invalid-feedback" style="display: none;">Email must end with @gmail.com.</div>
+                        <div id="emailError" class="invalid-feedback" style="display: none; color: white;">Email must end with @gmail.com.</div>
                     </div>
                     <div class="mb-3">
                         <p class="text-start">Password</p>
                         <input type="password" name="password" class="form-control" id="password" placeholder="Your Password" required>
-                        <div id="passwordError" class="invalid-feedback" style="display: none;">Password must be at least 5 characters and contain a number.</div>
+                        <div id="passwordError" class="invalid-feedback" style="display: none; color: white;">Password must be at least 5 characters and contain a number.</div>
                     </div>
 
                     <!-- Show Password -->
