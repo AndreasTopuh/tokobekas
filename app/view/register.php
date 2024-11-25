@@ -72,6 +72,63 @@
             var showPasswordCheckbox = document.getElementById("showPassword");
             x.type = showPasswordCheckbox.checked ? "text" : "password";
         }
+        function validateForm() {
+            let email = document.getElementById("email").value;
+            let password = document.getElementById("password").value;
+            let isValid = true;
+
+            // Validasi Email (harus mengandung @gmail.com)
+            if (!email.includes('@gmail.com')) {
+                document.getElementById("emailError").style.display = "block";
+                document.getElementById("email").classList.add("is-invalid");
+                isValid = false;
+            } else {
+                document.getElementById("emailError").style.display = "none";
+                document.getElementById("email").classList.remove("is-invalid");
+                document.getElementById("email").classList.add("is-valid");
+            }
+
+            // Validasi Password (minimal 5 karakter dan mengandung angka)
+            const passwordRegex = /.*\d.*/; // Mengandung setidaknya 1 angka
+            if (password.length < 5 || !passwordRegex.test(password)) {
+                document.getElementById("passwordError").style.display = "block";
+                document.getElementById("password").classList.add("is-invalid");
+                isValid = false;
+            } else {
+                document.getElementById("passwordError").style.display = "none";
+                document.getElementById("password").classList.remove("is-invalid");
+                document.getElementById("password").classList.add("is-valid");
+            }
+
+            return isValid;
+        }
+
+        // Instant feedback untuk email
+        document.getElementById("email").addEventListener("input", function() {
+            let email = this.value;
+            if (!email.includes('@gmail.com')) {
+                document.getElementById("emailError").style.display = "block";
+                this.classList.add("is-invalid");
+            } else {
+                document.getElementById("emailError").style.display = "none";
+                this.classList.remove("is-invalid");
+                this.classList.add("is-valid");
+            }
+        });
+
+        // Instant feedback untuk password
+        document.getElementById("password").addEventListener("input", function() {
+            let password = this.value;
+            const passwordRegex = /.*\d.*/; // Mengandung setidaknya 1 angka
+            if (password.length < 5 || !passwordRegex.test(password)) {
+                document.getElementById("passwordError").style.display = "block";
+                this.classList.add("is-invalid");
+            } else {
+                document.getElementById("passwordError").style.display = "none";
+                this.classList.remove("is-invalid");
+                this.classList.add("is-valid");
+            }
+        });
     </script>
 </body>
 </html>
